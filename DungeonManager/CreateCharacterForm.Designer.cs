@@ -391,7 +391,7 @@
             this.SaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveButton.Location = new System.Drawing.Point(0, 796);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(1234, 58);
+            this.SaveButton.Size = new System.Drawing.Size(878, 58);
             this.SaveButton.TabIndex = 11;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
@@ -1861,7 +1861,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1234, 854);
+            this.ClientSize = new System.Drawing.Size(878, 854);
             this.Controls.Add(this.ProficiencyBonuxTextBox);
             this.Controls.Add(this.XpTextBox);
             this.Controls.Add(this.label34);
