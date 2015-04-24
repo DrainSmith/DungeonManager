@@ -168,6 +168,15 @@
             this.label34 = new System.Windows.Forms.Label();
             this.XpTextBox = new System.Windows.Forms.TextBox();
             this.ProficiencyBonuxTextBox = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.PassiveWisdomTextBox = new System.Windows.Forms.TextBox();
+            this.MaxHitPointsTextBox = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.SpellSaveTextBox = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.SpellAttackTextBox = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.StrengthNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DexterityNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConstitutionNumericUpDown)).BeginInit();
@@ -183,6 +192,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.SpeedNumericUpDown)).BeginInit();
             this.SavingThrowGroupBox.SuspendLayout();
             this.FeatureGroupBox.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // AlignmentComboBox
@@ -389,9 +399,9 @@
             // 
             this.SaveButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.SaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveButton.Location = new System.Drawing.Point(0, 796);
+            this.SaveButton.Location = new System.Drawing.Point(0, 791);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(878, 58);
+            this.SaveButton.Size = new System.Drawing.Size(1145, 58);
             this.SaveButton.TabIndex = 11;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
@@ -610,9 +620,9 @@
             this.label11.Location = new System.Drawing.Point(302, 112);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(80, 20);
+            this.label11.Size = new System.Drawing.Size(121, 20);
             this.label11.TabIndex = 33;
-            this.label11.Text = "Initiative";
+            this.label11.Text = "Initiative Mod";
             // 
             // SkillsGroupBox
             // 
@@ -1777,11 +1787,11 @@
             this.FeatureGroupBox.Controls.Add(this.button3);
             this.FeatureGroupBox.Controls.Add(this.button4);
             this.FeatureGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FeatureGroupBox.Location = new System.Drawing.Point(298, 448);
+            this.FeatureGroupBox.Location = new System.Drawing.Point(861, 17);
             this.FeatureGroupBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FeatureGroupBox.Name = "FeatureGroupBox";
             this.FeatureGroupBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.FeatureGroupBox.Size = new System.Drawing.Size(262, 317);
+            this.FeatureGroupBox.Size = new System.Drawing.Size(262, 499);
             this.FeatureGroupBox.TabIndex = 41;
             this.FeatureGroupBox.TabStop = false;
             this.FeatureGroupBox.Text = "Features and Traits";
@@ -1802,7 +1812,7 @@
             this.FeatureListBox.ItemHeight = 20;
             this.FeatureListBox.Location = new System.Drawing.Point(8, 112);
             this.FeatureListBox.Name = "FeatureListBox";
-            this.FeatureListBox.Size = new System.Drawing.Size(240, 144);
+            this.FeatureListBox.Size = new System.Drawing.Size(240, 324);
             this.FeatureListBox.TabIndex = 14;
             // 
             // button3
@@ -1819,7 +1829,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(12, 272);
+            this.button4.Location = new System.Drawing.Point(12, 455);
             this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(242, 35);
@@ -1846,6 +1856,7 @@
             this.XpTextBox.Name = "XpTextBox";
             this.XpTextBox.Size = new System.Drawing.Size(163, 26);
             this.XpTextBox.TabIndex = 43;
+            this.XpTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.XpTextBox_KeyPress);
             // 
             // ProficiencyBonuxTextBox
             // 
@@ -1857,11 +1868,98 @@
             this.ProficiencyBonuxTextBox.Size = new System.Drawing.Size(84, 26);
             this.ProficiencyBonuxTextBox.TabIndex = 44;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.SpellAttackTextBox);
+            this.groupBox1.Controls.Add(this.label42);
+            this.groupBox1.Controls.Add(this.SpellSaveTextBox);
+            this.groupBox1.Controls.Add(this.label40);
+            this.groupBox1.Controls.Add(this.MaxHitPointsTextBox);
+            this.groupBox1.Controls.Add(this.label38);
+            this.groupBox1.Controls.Add(this.PassiveWisdomTextBox);
+            this.groupBox1.Controls.Add(this.label36);
+            this.groupBox1.Location = new System.Drawing.Point(298, 448);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(262, 317);
+            this.groupBox1.TabIndex = 45;
+            this.groupBox1.TabStop = false;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(8, 30);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(143, 20);
+            this.label36.TabIndex = 0;
+            this.label36.Text = "Passive Perception";
+            // 
+            // PassiveWisdomTextBox
+            // 
+            this.PassiveWisdomTextBox.Location = new System.Drawing.Point(174, 26);
+            this.PassiveWisdomTextBox.Name = "PassiveWisdomTextBox";
+            this.PassiveWisdomTextBox.ReadOnly = true;
+            this.PassiveWisdomTextBox.Size = new System.Drawing.Size(72, 26);
+            this.PassiveWisdomTextBox.TabIndex = 1;
+            // 
+            // MaxHitPointsTextBox
+            // 
+            this.MaxHitPointsTextBox.Location = new System.Drawing.Point(174, 146);
+            this.MaxHitPointsTextBox.Name = "MaxHitPointsTextBox";
+            this.MaxHitPointsTextBox.Size = new System.Drawing.Size(72, 26);
+            this.MaxHitPointsTextBox.TabIndex = 3;
+            this.MaxHitPointsTextBox.TextChanged += new System.EventHandler(this.MaxHitPointsTextBox_TextChanged);
+            this.MaxHitPointsTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MaxHitPointsTextBox_KeyPress);
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(8, 150);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(105, 20);
+            this.label38.TabIndex = 2;
+            this.label38.Text = "Max Hitpoints";
+            // 
+            // SpellSaveTextBox
+            // 
+            this.SpellSaveTextBox.Location = new System.Drawing.Point(174, 66);
+            this.SpellSaveTextBox.Name = "SpellSaveTextBox";
+            this.SpellSaveTextBox.ReadOnly = true;
+            this.SpellSaveTextBox.Size = new System.Drawing.Size(72, 26);
+            this.SpellSaveTextBox.TabIndex = 5;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(8, 70);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(111, 20);
+            this.label40.TabIndex = 4;
+            this.label40.Text = "Spell Save DC";
+            // 
+            // SpellAttackTextBox
+            // 
+            this.SpellAttackTextBox.Location = new System.Drawing.Point(174, 106);
+            this.SpellAttackTextBox.Name = "SpellAttackTextBox";
+            this.SpellAttackTextBox.ReadOnly = true;
+            this.SpellAttackTextBox.Size = new System.Drawing.Size(72, 26);
+            this.SpellAttackTextBox.TabIndex = 7;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(8, 110);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(129, 20);
+            this.label42.TabIndex = 6;
+            this.label42.Text = "Spell Attack Mod";
+            // 
             // CreateCharacterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(878, 854);
+            this.ClientSize = new System.Drawing.Size(1145, 849);
+            this.Controls.Add(this.SaveButton);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ProficiencyBonuxTextBox);
             this.Controls.Add(this.XpTextBox);
             this.Controls.Add(this.label34);
@@ -1881,10 +1979,9 @@
             this.Controls.Add(this.ArmorClassNumericUpDown);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.RaceComboBox);
-            this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.AlignmentComboBox);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "CreateCharacterForm";
             this.Text = "Character";
             this.Load += new System.EventHandler(this.CreateCharacterForm_Load);
@@ -1907,6 +2004,8 @@
             this.SavingThrowGroupBox.PerformLayout();
             this.FeatureGroupBox.ResumeLayout(false);
             this.FeatureGroupBox.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2054,5 +2153,14 @@
         private System.Windows.Forms.TextBox XpTextBox;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox ProficiencyBonuxTextBox;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox MaxHitPointsTextBox;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.TextBox PassiveWisdomTextBox;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.TextBox SpellAttackTextBox;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.TextBox SpellSaveTextBox;
+        private System.Windows.Forms.Label label40;
     }
 }

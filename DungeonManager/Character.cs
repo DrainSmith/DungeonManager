@@ -15,6 +15,7 @@ namespace DungeonManager
         public List<string> Features = new List<string>();
         public CharacterRace Race;
         public CharacterAlignment Alignment;
+        public int HitPoints;
         public int ArmorClass;
         public int Strength = 10;
         public int Dexterity = 10;
@@ -73,13 +74,15 @@ namespace DungeonManager
     [Serializable]
     public enum CharacterRace
     { 
-        Human,
-        Elf,
         Dwarf,
+        Elf,
         Halfling,
+        Human,
+        Dragonborn,
         Gnome,
         HalfElf,
-        HalfOrc
+        HalfOrc,
+        Tieling
     
     }
     [Serializable]
@@ -87,12 +90,16 @@ namespace DungeonManager
     { 
         Barbarian,
         Bard,
-        Rogue,
-        Wizard,
-        Fighter,
-        Sorcerer,
+        Cleric,
         Druid,
-        Cleric
+        Fighter,
+        Monk,
+        Paladin,
+        Ranger,
+        Rogue,
+        Sorcerer,
+        Warlock,
+        Wizard
     }
     [Serializable]
     public enum CharacterAlignment

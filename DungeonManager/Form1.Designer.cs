@@ -37,10 +37,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(14, 266);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Location = new System.Drawing.Point(21, 409);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(57, 21);
+            this.button1.Size = new System.Drawing.Size(162, 32);
             this.button1.TabIndex = 0;
             this.button1.Text = "Add Character";
             this.button1.UseVisualStyleBackColor = true;
@@ -53,49 +52,48 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.ColumnHeadersVisible = false;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 48);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 74);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(125, 213);
+            this.dataGridView1.Size = new System.Drawing.Size(412, 328);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(76, 266);
+            this.button2.Location = new System.Drawing.Point(278, 411);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(60, 21);
+            this.button2.Size = new System.Drawing.Size(150, 32);
             this.button2.TabIndex = 4;
-            this.button2.Text = "Delete";
+            this.button2.Text = "Delete Character";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(11, 4);
+            this.button3.Location = new System.Drawing.Point(16, 6);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(125, 39);
+            this.button3.Size = new System.Drawing.Size(412, 60);
             this.button3.TabIndex = 5;
-            this.button3.Text = "Open";
+            this.button3.Text = "Open Character";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(151, 294);
+            this.ClientSize = new System.Drawing.Size(441, 457);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "DungeonManager";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

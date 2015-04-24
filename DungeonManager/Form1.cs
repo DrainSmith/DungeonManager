@@ -35,10 +35,16 @@ namespace DungeonManager
             dataGridView1.DataSource = null;
             DataTable dt = new DataTable();
             dt.Columns.Add("guid", typeof(string));
-            dt.Columns.Add("name", typeof(string));
+            dt.Columns.Add("Name", typeof(string));
+            dt.Columns.Add("Armor Class", typeof(int)); 
+            dt.Columns.Add("Passive Perception", typeof(int));
+            dt.Columns.Add("Spell DC", typeof(int));
+            //dt.Columns.Add("ac", typeof(int));
             for (int x = 0; x < Settings.Characters.Count; x++)
             {
-                dt.Rows.Add(Settings.Characters[x]._guid, Settings.Characters[x].Name);
+                int pp = 10 + Util.GetModifier(Settings.Characters[x].Wisdom);
+                int dc = Util.GetSpellDC(Settings.Characters[x]);
+                dt.Rows.Add(Settings.Characters[x]._guid, Settings.Characters[x].Name, Settings.Characters[x].ArmorClass, pp, dc);
             }
             BindingSource bs = new BindingSource();
             bs.DataSource = dt;

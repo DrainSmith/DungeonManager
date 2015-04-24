@@ -70,7 +70,7 @@ namespace DungeonManager
             IntelligenceNumericUpDown.Value = c.Intelligence;
             StrengthNumericUpDown.Value = c.Strength;
             WisdomNumericUpDown.Value = c.Wisdom;
-
+            
             ClassListBox.Items.Clear();
             int totalLevels = 0;
             ProficiencyBonuxTextBox.Text = "0";
@@ -92,9 +92,15 @@ namespace DungeonManager
 
             ProficiencyBonuxTextBox.Text = c.ProficiencyBonus.ToString();
 
+            PassiveWisdomTextBox.Text = (10 + Util.GetModifier(c.Wisdom)).ToString();
+            SpellSaveTextBox.Text = Util.GetSpellDC(c).ToString();
+            SpellAttackTextBox.Text = Util.GetSpellAttackModifier(c).ToString();
+
             ArmorClassNumericUpDown.Value = c.ArmorClass;
             InitiativeNumericUpDown.Value = c.Initiative;
             SpeedNumericUpDown.Value = c.Speed;
+
+            MaxHitPointsTextBox.Text = c.HitPoints.ToString();
 
             NameTextBox.Text = c.Name;
 
@@ -864,6 +870,33 @@ namespace DungeonManager
                 ClassListBox.Items.RemoveAt(ClassListBox.SelectedIndex);
                 c.Levels.Add(new Level() { _class = (CharacterClass)Enum.Parse(typeof(CharacterClass), s[0]), _level = Int32.Parse(s[1]) + 1 });
                 ShowCharacter();
+            }
+        }
+
+        private void MaxHitPointsTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+            try 
+            { 
+                c.HitPoints = Int32.Parse(MaxHitPointsTextBox.Text);
+            }
+            catch
+            {}
+        }
+
+        private void XpTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void MaxHitPointsTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
 
