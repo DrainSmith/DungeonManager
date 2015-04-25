@@ -168,15 +168,25 @@
             this.label34 = new System.Windows.Forms.Label();
             this.XpTextBox = new System.Windows.Forms.TextBox();
             this.ProficiencyBonuxTextBox = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label36 = new System.Windows.Forms.Label();
-            this.PassiveWisdomTextBox = new System.Windows.Forms.TextBox();
-            this.MaxHitPointsTextBox = new System.Windows.Forms.TextBox();
-            this.label38 = new System.Windows.Forms.Label();
-            this.SpellSaveTextBox = new System.Windows.Forms.TextBox();
-            this.label40 = new System.Windows.Forms.Label();
             this.SpellAttackTextBox = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
+            this.SpellSaveTextBox = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.MaxHitPointsTextBox = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.PassiveWisdomTextBox = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.PersonalityTraitsRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.BackgroundTextBox = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.IdealsRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.FlawsRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.BondsRichTextBox = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.StrengthNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DexterityNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConstitutionNumericUpDown)).BeginInit();
@@ -401,7 +411,7 @@
             this.SaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveButton.Location = new System.Drawing.Point(0, 791);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(1145, 58);
+            this.SaveButton.Size = new System.Drawing.Size(1625, 58);
             this.SaveButton.TabIndex = 11;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
@@ -493,7 +503,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(302, 66);
+            this.label7.Location = new System.Drawing.Point(13, 290);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(114, 20);
@@ -502,7 +512,7 @@
             // 
             // ArmorClassNumericUpDown
             // 
-            this.ArmorClassNumericUpDown.Location = new System.Drawing.Point(472, 60);
+            this.ArmorClassNumericUpDown.Location = new System.Drawing.Point(203, 290);
             this.ArmorClassNumericUpDown.Name = "ArmorClassNumericUpDown";
             this.ArmorClassNumericUpDown.Size = new System.Drawing.Size(84, 26);
             this.ArmorClassNumericUpDown.TabIndex = 27;
@@ -517,7 +527,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(18, 20);
+            this.label8.Location = new System.Drawing.Point(13, 18);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(57, 20);
@@ -528,7 +538,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(18, 63);
+            this.label9.Location = new System.Drawing.Point(13, 61);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(92, 20);
@@ -539,7 +549,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(18, 109);
+            this.label10.Location = new System.Drawing.Point(13, 109);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(52, 20);
@@ -555,7 +565,7 @@
             this.ClassGroupBox.Controls.Add(this.button1);
             this.ClassGroupBox.Controls.Add(this.button2);
             this.ClassGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClassGroupBox.Location = new System.Drawing.Point(22, 448);
+            this.ClassGroupBox.Location = new System.Drawing.Point(591, 18);
             this.ClassGroupBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ClassGroupBox.Name = "ClassGroupBox";
             this.ClassGroupBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -596,7 +606,7 @@
             this.AttributesGroupBox.Controls.Add(this.DexModifierLabel);
             this.AttributesGroupBox.Controls.Add(this.StrModifierLabel);
             this.AttributesGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AttributesGroupBox.Location = new System.Drawing.Point(22, 192);
+            this.AttributesGroupBox.Location = new System.Drawing.Point(308, 15);
             this.AttributesGroupBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.AttributesGroupBox.Name = "AttributesGroupBox";
             this.AttributesGroupBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -607,7 +617,7 @@
             // 
             // InitiativeNumericUpDown
             // 
-            this.InitiativeNumericUpDown.Location = new System.Drawing.Point(472, 106);
+            this.InitiativeNumericUpDown.Location = new System.Drawing.Point(203, 336);
             this.InitiativeNumericUpDown.Name = "InitiativeNumericUpDown";
             this.InitiativeNumericUpDown.Size = new System.Drawing.Size(84, 26);
             this.InitiativeNumericUpDown.TabIndex = 34;
@@ -617,7 +627,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(302, 112);
+            this.label11.Location = new System.Drawing.Point(13, 340);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(121, 20);
@@ -699,7 +709,7 @@
             this.SkillsGroupBox.Controls.Add(this.PersuasionCheckBox1);
             this.SkillsGroupBox.Controls.Add(this.PersuasionCheckBox2);
             this.SkillsGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SkillsGroupBox.Location = new System.Drawing.Point(585, 15);
+            this.SkillsGroupBox.Location = new System.Drawing.Point(892, 15);
             this.SkillsGroupBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SkillsGroupBox.Name = "SkillsGroupBox";
             this.SkillsGroupBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -1522,7 +1532,7 @@
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(302, 20);
+            this.label30.Location = new System.Drawing.Point(15, 473);
             this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(162, 20);
@@ -1536,7 +1546,7 @@
             0,
             0,
             0});
-            this.SpeedNumericUpDown.Location = new System.Drawing.Point(472, 154);
+            this.SpeedNumericUpDown.Location = new System.Drawing.Point(203, 384);
             this.SpeedNumericUpDown.Name = "SpeedNumericUpDown";
             this.SpeedNumericUpDown.Size = new System.Drawing.Size(84, 26);
             this.SpeedNumericUpDown.TabIndex = 39;
@@ -1551,7 +1561,7 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(304, 160);
+            this.label31.Location = new System.Drawing.Point(15, 388);
             this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(61, 20);
@@ -1579,11 +1589,11 @@
             this.SavingThrowGroupBox.Controls.Add(this.label39);
             this.SavingThrowGroupBox.Controls.Add(this.label41);
             this.SavingThrowGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SavingThrowGroupBox.Location = new System.Drawing.Point(298, 192);
+            this.SavingThrowGroupBox.Location = new System.Drawing.Point(308, 270);
             this.SavingThrowGroupBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SavingThrowGroupBox.Name = "SavingThrowGroupBox";
             this.SavingThrowGroupBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.SavingThrowGroupBox.Size = new System.Drawing.Size(262, 243);
+            this.SavingThrowGroupBox.Size = new System.Drawing.Size(267, 243);
             this.SavingThrowGroupBox.TabIndex = 40;
             this.SavingThrowGroupBox.TabStop = false;
             this.SavingThrowGroupBox.Text = "Saving Throws";
@@ -1787,11 +1797,11 @@
             this.FeatureGroupBox.Controls.Add(this.button3);
             this.FeatureGroupBox.Controls.Add(this.button4);
             this.FeatureGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FeatureGroupBox.Location = new System.Drawing.Point(861, 17);
+            this.FeatureGroupBox.Location = new System.Drawing.Point(591, 345);
             this.FeatureGroupBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FeatureGroupBox.Name = "FeatureGroupBox";
             this.FeatureGroupBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.FeatureGroupBox.Size = new System.Drawing.Size(262, 499);
+            this.FeatureGroupBox.Size = new System.Drawing.Size(267, 419);
             this.FeatureGroupBox.TabIndex = 41;
             this.FeatureGroupBox.TabStop = false;
             this.FeatureGroupBox.Text = "Features and Traits";
@@ -1810,9 +1820,9 @@
             this.FeatureListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FeatureListBox.FormattingEnabled = true;
             this.FeatureListBox.ItemHeight = 20;
-            this.FeatureListBox.Location = new System.Drawing.Point(8, 112);
+            this.FeatureListBox.Location = new System.Drawing.Point(9, 116);
             this.FeatureListBox.Name = "FeatureListBox";
-            this.FeatureListBox.Size = new System.Drawing.Size(240, 324);
+            this.FeatureListBox.Size = new System.Drawing.Size(240, 244);
             this.FeatureListBox.TabIndex = 14;
             // 
             // button3
@@ -1829,7 +1839,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(12, 455);
+            this.button4.Location = new System.Drawing.Point(8, 374);
             this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(242, 35);
@@ -1842,7 +1852,7 @@
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(18, 157);
+            this.label34.Location = new System.Drawing.Point(13, 155);
             this.label34.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(102, 20);
@@ -1861,51 +1871,54 @@
             // ProficiencyBonuxTextBox
             // 
             this.ProficiencyBonuxTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProficiencyBonuxTextBox.Location = new System.Drawing.Point(472, 17);
+            this.ProficiencyBonuxTextBox.Location = new System.Drawing.Point(203, 473);
             this.ProficiencyBonuxTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ProficiencyBonuxTextBox.Name = "ProficiencyBonuxTextBox";
             this.ProficiencyBonuxTextBox.ReadOnly = true;
             this.ProficiencyBonuxTextBox.Size = new System.Drawing.Size(84, 26);
             this.ProficiencyBonuxTextBox.TabIndex = 44;
             // 
-            // groupBox1
+            // SpellAttackTextBox
             // 
-            this.groupBox1.Controls.Add(this.SpellAttackTextBox);
-            this.groupBox1.Controls.Add(this.label42);
-            this.groupBox1.Controls.Add(this.SpellSaveTextBox);
-            this.groupBox1.Controls.Add(this.label40);
-            this.groupBox1.Controls.Add(this.MaxHitPointsTextBox);
-            this.groupBox1.Controls.Add(this.label38);
-            this.groupBox1.Controls.Add(this.PassiveWisdomTextBox);
-            this.groupBox1.Controls.Add(this.label36);
-            this.groupBox1.Location = new System.Drawing.Point(298, 448);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(262, 317);
-            this.groupBox1.TabIndex = 45;
-            this.groupBox1.TabStop = false;
+            this.SpellAttackTextBox.Location = new System.Drawing.Point(203, 562);
+            this.SpellAttackTextBox.Name = "SpellAttackTextBox";
+            this.SpellAttackTextBox.ReadOnly = true;
+            this.SpellAttackTextBox.Size = new System.Drawing.Size(84, 26);
+            this.SpellAttackTextBox.TabIndex = 7;
             // 
-            // label36
+            // label42
             // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(8, 30);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(143, 20);
-            this.label36.TabIndex = 0;
-            this.label36.Text = "Passive Perception";
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label42.Location = new System.Drawing.Point(13, 563);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(151, 20);
+            this.label42.TabIndex = 6;
+            this.label42.Text = "Spell Attack Mod";
             // 
-            // PassiveWisdomTextBox
+            // SpellSaveTextBox
             // 
-            this.PassiveWisdomTextBox.Location = new System.Drawing.Point(174, 26);
-            this.PassiveWisdomTextBox.Name = "PassiveWisdomTextBox";
-            this.PassiveWisdomTextBox.ReadOnly = true;
-            this.PassiveWisdomTextBox.Size = new System.Drawing.Size(72, 26);
-            this.PassiveWisdomTextBox.TabIndex = 1;
+            this.SpellSaveTextBox.Location = new System.Drawing.Point(203, 520);
+            this.SpellSaveTextBox.Name = "SpellSaveTextBox";
+            this.SpellSaveTextBox.ReadOnly = true;
+            this.SpellSaveTextBox.Size = new System.Drawing.Size(84, 26);
+            this.SpellSaveTextBox.TabIndex = 5;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label40.Location = new System.Drawing.Point(13, 521);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(131, 20);
+            this.label40.TabIndex = 4;
+            this.label40.Text = "Spell Save DC";
             // 
             // MaxHitPointsTextBox
             // 
-            this.MaxHitPointsTextBox.Location = new System.Drawing.Point(174, 146);
+            this.MaxHitPointsTextBox.Location = new System.Drawing.Point(203, 245);
             this.MaxHitPointsTextBox.Name = "MaxHitPointsTextBox";
-            this.MaxHitPointsTextBox.Size = new System.Drawing.Size(72, 26);
+            this.MaxHitPointsTextBox.Size = new System.Drawing.Size(84, 26);
             this.MaxHitPointsTextBox.TabIndex = 3;
             this.MaxHitPointsTextBox.TextChanged += new System.EventHandler(this.MaxHitPointsTextBox_TextChanged);
             this.MaxHitPointsTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MaxHitPointsTextBox_KeyPress);
@@ -1913,58 +1926,171 @@
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(8, 150);
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label38.Location = new System.Drawing.Point(13, 248);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(105, 20);
+            this.label38.Size = new System.Drawing.Size(125, 20);
             this.label38.TabIndex = 2;
             this.label38.Text = "Max Hitpoints";
             // 
-            // SpellSaveTextBox
+            // PassiveWisdomTextBox
             // 
-            this.SpellSaveTextBox.Location = new System.Drawing.Point(174, 66);
-            this.SpellSaveTextBox.Name = "SpellSaveTextBox";
-            this.SpellSaveTextBox.ReadOnly = true;
-            this.SpellSaveTextBox.Size = new System.Drawing.Size(72, 26);
-            this.SpellSaveTextBox.TabIndex = 5;
+            this.PassiveWisdomTextBox.Location = new System.Drawing.Point(203, 429);
+            this.PassiveWisdomTextBox.Name = "PassiveWisdomTextBox";
+            this.PassiveWisdomTextBox.ReadOnly = true;
+            this.PassiveWisdomTextBox.Size = new System.Drawing.Size(84, 26);
+            this.PassiveWisdomTextBox.TabIndex = 1;
             // 
-            // label40
+            // label36
             // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(8, 70);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(111, 20);
-            this.label40.TabIndex = 4;
-            this.label40.Text = "Spell Save DC";
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label36.Location = new System.Drawing.Point(13, 430);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(171, 20);
+            this.label36.TabIndex = 0;
+            this.label36.Text = "Passive Perception";
             // 
-            // SpellAttackTextBox
+            // groupBox1
             // 
-            this.SpellAttackTextBox.Location = new System.Drawing.Point(174, 106);
-            this.SpellAttackTextBox.Name = "SpellAttackTextBox";
-            this.SpellAttackTextBox.ReadOnly = true;
-            this.SpellAttackTextBox.Size = new System.Drawing.Size(72, 26);
-            this.SpellAttackTextBox.TabIndex = 7;
+            this.groupBox1.Controls.Add(this.FlawsRichTextBox);
+            this.groupBox1.Controls.Add(this.label46);
+            this.groupBox1.Controls.Add(this.label47);
+            this.groupBox1.Controls.Add(this.BondsRichTextBox);
+            this.groupBox1.Controls.Add(this.IdealsRichTextBox);
+            this.groupBox1.Controls.Add(this.label45);
+            this.groupBox1.Controls.Add(this.label43);
+            this.groupBox1.Controls.Add(this.PersonalityTraitsRichTextBox);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(1176, 18);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(368, 746);
+            this.groupBox1.TabIndex = 45;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Personality";
             // 
-            // label42
+            // label43
             // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(8, 110);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(129, 20);
-            this.label42.TabIndex = 6;
-            this.label42.Text = "Spell Attack Mod";
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(6, 29);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(129, 20);
+            this.label43.TabIndex = 1;
+            this.label43.Text = "Personality Traits";
+            // 
+            // PersonalityTraitsRichTextBox
+            // 
+            this.PersonalityTraitsRichTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PersonalityTraitsRichTextBox.Location = new System.Drawing.Point(10, 52);
+            this.PersonalityTraitsRichTextBox.Name = "PersonalityTraitsRichTextBox";
+            this.PersonalityTraitsRichTextBox.Size = new System.Drawing.Size(352, 141);
+            this.PersonalityTraitsRichTextBox.TabIndex = 0;
+            this.PersonalityTraitsRichTextBox.Text = "";
+            this.PersonalityTraitsRichTextBox.TextChanged += new System.EventHandler(this.PersonalityTraitsRichTextBox_TextChanged);
+            // 
+            // BackgroundTextBox
+            // 
+            this.BackgroundTextBox.Location = new System.Drawing.Point(124, 195);
+            this.BackgroundTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BackgroundTextBox.Name = "BackgroundTextBox";
+            this.BackgroundTextBox.Size = new System.Drawing.Size(163, 26);
+            this.BackgroundTextBox.TabIndex = 47;
+            this.BackgroundTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.Location = new System.Drawing.Point(13, 198);
+            this.label44.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(108, 20);
+            this.label44.TabIndex = 46;
+            this.label44.Text = "Background";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.Location = new System.Drawing.Point(6, 199);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(52, 20);
+            this.label45.TabIndex = 3;
+            this.label45.Text = "Ideals";
+            // 
+            // IdealsRichTextBox
+            // 
+            this.IdealsRichTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IdealsRichTextBox.Location = new System.Drawing.Point(10, 222);
+            this.IdealsRichTextBox.Name = "IdealsRichTextBox";
+            this.IdealsRichTextBox.Size = new System.Drawing.Size(352, 141);
+            this.IdealsRichTextBox.TabIndex = 4;
+            this.IdealsRichTextBox.Text = "";
+            this.IdealsRichTextBox.TextChanged += new System.EventHandler(this.IdealsRichTextBox_TextChanged);
+            // 
+            // FlawsRichTextBox
+            // 
+            this.FlawsRichTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FlawsRichTextBox.Location = new System.Drawing.Point(10, 579);
+            this.FlawsRichTextBox.Name = "FlawsRichTextBox";
+            this.FlawsRichTextBox.Size = new System.Drawing.Size(352, 141);
+            this.FlawsRichTextBox.TabIndex = 8;
+            this.FlawsRichTextBox.Text = "";
+            this.FlawsRichTextBox.TextChanged += new System.EventHandler(this.FlawsRichTextBox_TextChanged);
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.Location = new System.Drawing.Point(11, 556);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(50, 20);
+            this.label46.TabIndex = 7;
+            this.label46.Text = "Flaws";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.Location = new System.Drawing.Point(6, 380);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(55, 20);
+            this.label47.TabIndex = 6;
+            this.label47.Text = "Bonds";
+            // 
+            // BondsRichTextBox
+            // 
+            this.BondsRichTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BondsRichTextBox.Location = new System.Drawing.Point(10, 403);
+            this.BondsRichTextBox.Name = "BondsRichTextBox";
+            this.BondsRichTextBox.Size = new System.Drawing.Size(352, 141);
+            this.BondsRichTextBox.TabIndex = 5;
+            this.BondsRichTextBox.Text = "";
+            this.BondsRichTextBox.TextChanged += new System.EventHandler(this.BondsRichTextBox_TextChanged);
             // 
             // CreateCharacterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1145, 849);
-            this.Controls.Add(this.SaveButton);
+            this.ClientSize = new System.Drawing.Size(1625, 849);
+            this.Controls.Add(this.BackgroundTextBox);
+            this.Controls.Add(this.label44);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.SpellAttackTextBox);
+            this.Controls.Add(this.SaveButton);
+            this.Controls.Add(this.label42);
+            this.Controls.Add(this.SpellSaveTextBox);
             this.Controls.Add(this.ProficiencyBonuxTextBox);
+            this.Controls.Add(this.label40);
             this.Controls.Add(this.XpTextBox);
+            this.Controls.Add(this.MaxHitPointsTextBox);
             this.Controls.Add(this.label34);
+            this.Controls.Add(this.label38);
             this.Controls.Add(this.FeatureGroupBox);
+            this.Controls.Add(this.PassiveWisdomTextBox);
             this.Controls.Add(this.SavingThrowGroupBox);
+            this.Controls.Add(this.label36);
             this.Controls.Add(this.SpeedNumericUpDown);
             this.Controls.Add(this.label31);
             this.Controls.Add(this.label30);
@@ -1984,7 +2110,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "CreateCharacterForm";
             this.Text = "Character";
-            this.Load += new System.EventHandler(this.CreateCharacterForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.StrengthNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DexterityNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConstitutionNumericUpDown)).EndInit();
@@ -2153,7 +2278,6 @@
         private System.Windows.Forms.TextBox XpTextBox;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox ProficiencyBonuxTextBox;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox MaxHitPointsTextBox;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.TextBox PassiveWisdomTextBox;
@@ -2162,5 +2286,16 @@
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.TextBox SpellSaveTextBox;
         private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.RichTextBox PersonalityTraitsRichTextBox;
+        private System.Windows.Forms.TextBox BackgroundTextBox;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.RichTextBox FlawsRichTextBox;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.RichTextBox BondsRichTextBox;
+        private System.Windows.Forms.RichTextBox IdealsRichTextBox;
+        private System.Windows.Forms.Label label45;
     }
 }

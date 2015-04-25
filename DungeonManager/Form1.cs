@@ -33,22 +33,21 @@ namespace DungeonManager
         public void RefreshCharacters()
         {
             dataGridView1.DataSource = null;
-            DataTable dt = new DataTable();
-            dt.Columns.Add("guid", typeof(string));
-            dt.Columns.Add("Name", typeof(string));
-            dt.Columns.Add("Armor Class", typeof(int)); 
-            dt.Columns.Add("Passive Perception", typeof(int));
-            dt.Columns.Add("Spell DC", typeof(int));
-            //dt.Columns.Add("ac", typeof(int));
+            
+            dataGridView1.Columns.Add("guid", "Guid");
+            dataGridView1.Columns.Add("Name", "Name");
+            dataGridView1.Columns.Add("Armor Class", "Armor Class");
+            dataGridView1.Columns.Add("Passive Perception", "Passive Perception");
+            dataGridView1.Columns.Add("Spell DC", "Spell DC");
+
             for (int x = 0; x < Settings.Characters.Count; x++)
             {
                 int pp = 10 + Util.GetModifier(Settings.Characters[x].Wisdom);
                 int dc = Util.GetSpellDC(Settings.Characters[x]);
-                dt.Rows.Add(Settings.Characters[x]._guid, Settings.Characters[x].Name, Settings.Characters[x].ArmorClass, pp, dc);
+
+                dataGridView1.Rows.Add(Settings.Characters[x]._guid, Settings.Characters[x].Name, Settings.Characters[x].ArmorClass, pp, dc);
             }
-            BindingSource bs = new BindingSource();
-            bs.DataSource = dt;
-            dataGridView1.DataSource = bs;
+            
             dataGridView1.Columns[0].Visible = false;
         }
 
@@ -89,6 +88,42 @@ namespace DungeonManager
                 var c = Settings.Characters.Find(ch => ch._guid == _guid);
                 var f = new CreateCharacterForm(c);
                 f.Show();
+            }
+        }
+
+        private void ChracterUpButton_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 1)
+            {
+                int selectedRowIndex = dataGridView1.SelectedRows[0].Index;
+                if (selectedRowIndex - 1 < 0)
+                    return;
+                else
+                {
+                    DataGridViewRow row = dataGridView1.SelectedRows[0];
+                    dataGridView1.Rows.Remove(row);
+                    dataGridView1.Rows.Insert(selectedRowIndex - 1, row);
+                    dataGridView1.ClearSelection();
+                    dataGridView1.Rows[selectedRowIndex - 1].Selected = true;
+                }
+            }
+        }
+
+        private void CharacterDownButton_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 1)
+            {
+                int selectedRowIndex = dataGridView1.SelectedRows[0].Index;
+                if (selectedRowIndex +1 >= dataGridView1.Rows.Count)
+                    return;
+                else
+                {
+                    DataGridViewRow row = dataGridView1.SelectedRows[0];
+                    dataGridView1.Rows.Remove(row);
+                    dataGridView1.Rows.Insert(selectedRowIndex + 1, row);
+                    dataGridView1.ClearSelection();
+                    dataGridView1.Rows[selectedRowIndex + 1].Selected = true;
+                }
             }
         }
     }

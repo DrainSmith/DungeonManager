@@ -106,7 +106,13 @@ namespace DungeonManager
 
             RaceComboBox.SelectedItem = c.Race;
             AlignmentComboBox.SelectedItem = c.Alignment;
-            
+
+            PersonalityTraitsRichTextBox.Text = c.PersonalityTraits;
+            IdealsRichTextBox.Text = c.Ideals;
+            BondsRichTextBox.Text = c.Bonds;
+            FlawsRichTextBox.Text = c.Flaws;
+
+            BackgroundTextBox.Text = c.Background;
             
             
             FeatureListBox.Items.Clear();
@@ -446,10 +452,6 @@ namespace DungeonManager
             }
         }
 
-        private void CreateCharacterForm_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -900,8 +902,31 @@ namespace DungeonManager
             }
         }
 
+        private void PersonalityTraitsRichTextBox_TextChanged(object sender, EventArgs e)
+        {
+            c.PersonalityTraits = PersonalityTraitsRichTextBox.Text;
+        }
 
+        private void IdealsRichTextBox_TextChanged(object sender, EventArgs e)
+        {
+            c.Ideals = IdealsRichTextBox.Text;
+        }
 
+        private void BondsRichTextBox_TextChanged(object sender, EventArgs e)
+        {
+            c.Bonds = BondsRichTextBox.Text;
+        }
 
+        private void FlawsRichTextBox_TextChanged(object sender, EventArgs e)
+        {
+            c.Flaws = FlawsRichTextBox.Text;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            c.Background = BackgroundTextBox.Text;
+        }
+
+        
     }
 }

@@ -54,6 +54,12 @@ namespace DungeonManager
         public int Stealth = 0;
         public int Survival = 0;
 
+        public string Background;
+        public string PersonalityTraits;
+        public string Ideals;
+        public string Bonds;
+        public string Flaws;
+
         public Character()
         {
             _guid = Guid.NewGuid().ToString();
@@ -82,7 +88,15 @@ namespace DungeonManager
         Gnome,
         HalfElf,
         HalfOrc,
-        Tieling
+        Tieling,
+        AirGenasi,
+        EarthGenasi,
+        WaterGenasi,
+        EarthGenasi,
+        Arakocra,
+        DeepGnome,
+        Goliath
+
     
     }
     [Serializable]
