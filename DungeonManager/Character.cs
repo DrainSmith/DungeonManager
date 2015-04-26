@@ -92,7 +92,7 @@ namespace DungeonManager
         AirGenasi,
         EarthGenasi,
         WaterGenasi,
-        EarthGenasi,
+        FireGenasi,
         Arakocra,
         DeepGnome,
         Goliath

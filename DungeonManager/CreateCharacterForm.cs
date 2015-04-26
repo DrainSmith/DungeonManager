@@ -17,33 +17,18 @@ namespace DungeonManager
 
         private void Initialize()
         {
-            AlignmentComboBox.Items.Add(CharacterAlignment.ChaoticEvil);
-            AlignmentComboBox.Items.Add(CharacterAlignment.ChaoticGood);
-            AlignmentComboBox.Items.Add(CharacterAlignment.ChaoticNeutral);
-            AlignmentComboBox.Items.Add(CharacterAlignment.LawfullEvil);
-            AlignmentComboBox.Items.Add(CharacterAlignment.LawfullGood);
-            AlignmentComboBox.Items.Add(CharacterAlignment.LawfullNeutral);
-            AlignmentComboBox.Items.Add(CharacterAlignment.NeutralEvil);
-            AlignmentComboBox.Items.Add(CharacterAlignment.NeutralGood);
-            AlignmentComboBox.Items.Add(CharacterAlignment.TrueNeutral);
+            var alignments = Enum.GetValues(typeof(CharacterAlignment));
+            foreach (var a in alignments)
+                AlignmentComboBox.Items.Add(a);
 
-            RaceComboBox.Items.Add(CharacterRace.Dwarf);
-            RaceComboBox.Items.Add(CharacterRace.Elf);
-            RaceComboBox.Items.Add(CharacterRace.Gnome);
-            RaceComboBox.Items.Add(CharacterRace.HalfElf);
-            RaceComboBox.Items.Add(CharacterRace.Halfling);
-            RaceComboBox.Items.Add(CharacterRace.HalfOrc);
-            RaceComboBox.Items.Add(CharacterRace.Human);
+            var races = Enum.GetValues(typeof(CharacterRace));
+            foreach (var r in races)
+                RaceComboBox.Items.Add(r);
 
-            ClassComboBox.Items.Add(CharacterClass.Barbarian);
-            ClassComboBox.Items.Add(CharacterClass.Bard);
-            ClassComboBox.Items.Add(CharacterClass.Cleric);
-            ClassComboBox.Items.Add(CharacterClass.Druid);
-            ClassComboBox.Items.Add(CharacterClass.Fighter);
-            ClassComboBox.Items.Add(CharacterClass.Rogue);
-            ClassComboBox.Items.Add(CharacterClass.Sorcerer);
-            ClassComboBox.Items.Add(CharacterClass.Wizard);
-        }
+            var classes = Enum.GetValues(typeof(CharacterClass));
+            foreach (var cl in classes)
+                ClassComboBox.Items.Add(cl);
+}
 
         public CreateCharacterForm()
         {
