@@ -118,13 +118,13 @@ namespace DungeonManager
     [Serializable]
     public enum CharacterAlignment
     { 
-        LawfullGood,
+        LawfulGood,
         ChaoticGood,
         NeutralGood,
-        LawfullNeutral,
+        LawfulNeutral,
         ChaoticNeutral,
         TrueNeutral,
-        LawfullEvil,
+        LawfulEvil,
         ChaoticEvil,
         NeutralEvil
     }
