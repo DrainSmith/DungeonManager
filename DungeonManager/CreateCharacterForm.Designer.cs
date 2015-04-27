@@ -210,7 +210,7 @@
             this.AlignmentComboBox.FormattingEnabled = true;
             this.AlignmentComboBox.ItemHeight = 13;
             this.AlignmentComboBox.Location = new System.Drawing.Point(83, 38);
-            this.AlignmentComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AlignmentComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.AlignmentComboBox.Name = "AlignmentComboBox";
             this.AlignmentComboBox.Size = new System.Drawing.Size(110, 21);
             this.AlignmentComboBox.TabIndex = 4;
@@ -219,7 +219,7 @@
             // NameTextBox
             // 
             this.NameTextBox.Location = new System.Drawing.Point(83, 10);
-            this.NameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(110, 20);
             this.NameTextBox.TabIndex = 0;
@@ -229,7 +229,7 @@
             // 
             this.StrengthNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StrengthNumericUpDown.Location = new System.Drawing.Point(84, 14);
-            this.StrengthNumericUpDown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.StrengthNumericUpDown.Margin = new System.Windows.Forms.Padding(2);
             this.StrengthNumericUpDown.Name = "StrengthNumericUpDown";
             this.StrengthNumericUpDown.Size = new System.Drawing.Size(57, 20);
             this.StrengthNumericUpDown.TabIndex = 6;
@@ -244,7 +244,7 @@
             // 
             this.DexterityNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DexterityNumericUpDown.Location = new System.Drawing.Point(84, 36);
-            this.DexterityNumericUpDown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DexterityNumericUpDown.Margin = new System.Windows.Forms.Padding(2);
             this.DexterityNumericUpDown.Name = "DexterityNumericUpDown";
             this.DexterityNumericUpDown.Size = new System.Drawing.Size(57, 20);
             this.DexterityNumericUpDown.TabIndex = 7;
@@ -259,7 +259,7 @@
             // 
             this.ConstitutionNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConstitutionNumericUpDown.Location = new System.Drawing.Point(84, 59);
-            this.ConstitutionNumericUpDown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ConstitutionNumericUpDown.Margin = new System.Windows.Forms.Padding(2);
             this.ConstitutionNumericUpDown.Name = "ConstitutionNumericUpDown";
             this.ConstitutionNumericUpDown.Size = new System.Drawing.Size(57, 20);
             this.ConstitutionNumericUpDown.TabIndex = 8;
@@ -274,7 +274,7 @@
             // 
             this.CharismaNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CharismaNumericUpDown.Location = new System.Drawing.Point(84, 127);
-            this.CharismaNumericUpDown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CharismaNumericUpDown.Margin = new System.Windows.Forms.Padding(2);
             this.CharismaNumericUpDown.Name = "CharismaNumericUpDown";
             this.CharismaNumericUpDown.Size = new System.Drawing.Size(57, 20);
             this.CharismaNumericUpDown.TabIndex = 10;
@@ -289,7 +289,7 @@
             // 
             this.WisdomNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WisdomNumericUpDown.Location = new System.Drawing.Point(84, 105);
-            this.WisdomNumericUpDown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.WisdomNumericUpDown.Margin = new System.Windows.Forms.Padding(2);
             this.WisdomNumericUpDown.Name = "WisdomNumericUpDown";
             this.WisdomNumericUpDown.Size = new System.Drawing.Size(57, 20);
             this.WisdomNumericUpDown.TabIndex = 9;
@@ -304,7 +304,7 @@
             // 
             this.IntelligenceNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IntelligenceNumericUpDown.Location = new System.Drawing.Point(84, 82);
-            this.IntelligenceNumericUpDown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.IntelligenceNumericUpDown.Margin = new System.Windows.Forms.Padding(2);
             this.IntelligenceNumericUpDown.Name = "IntelligenceNumericUpDown";
             this.IntelligenceNumericUpDown.Size = new System.Drawing.Size(57, 20);
             this.IntelligenceNumericUpDown.TabIndex = 9;
@@ -386,7 +386,7 @@
             this.ClassListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClassListBox.FormattingEnabled = true;
             this.ClassListBox.Location = new System.Drawing.Point(5, 73);
-            this.ClassListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ClassListBox.Margin = new System.Windows.Forms.Padding(2);
             this.ClassListBox.Name = "ClassListBox";
             this.ClassListBox.Size = new System.Drawing.Size(161, 95);
             this.ClassListBox.TabIndex = 14;
@@ -396,7 +396,7 @@
             this.ClassComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClassComboBox.FormattingEnabled = true;
             this.ClassComboBox.Location = new System.Drawing.Point(5, 18);
-            this.ClassComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ClassComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.ClassComboBox.Name = "ClassComboBox";
             this.ClassComboBox.Size = new System.Drawing.Size(104, 21);
             this.ClassComboBox.TabIndex = 1;
@@ -405,7 +405,7 @@
             // 
             this.LevelNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LevelNumericUpDown.Location = new System.Drawing.Point(113, 18);
-            this.LevelNumericUpDown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LevelNumericUpDown.Margin = new System.Windows.Forms.Padding(2);
             this.LevelNumericUpDown.Name = "LevelNumericUpDown";
             this.LevelNumericUpDown.Size = new System.Drawing.Size(53, 20);
             this.LevelNumericUpDown.TabIndex = 2;
@@ -414,7 +414,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(5, 42);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(161, 27);
             this.button1.TabIndex = 3;
@@ -426,10 +426,10 @@
             // 
             this.SaveButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.SaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveButton.Location = new System.Drawing.Point(0, 514);
-            this.SaveButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SaveButton.Location = new System.Drawing.Point(0, 519);
+            this.SaveButton.Margin = new System.Windows.Forms.Padding(2);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(1083, 38);
+            this.SaveButton.Size = new System.Drawing.Size(1032, 38);
             this.SaveButton.TabIndex = 11;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
@@ -506,7 +506,7 @@
             this.RaceComboBox.FormattingEnabled = true;
             this.RaceComboBox.ItemHeight = 13;
             this.RaceComboBox.Location = new System.Drawing.Point(83, 68);
-            this.RaceComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RaceComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.RaceComboBox.Name = "RaceComboBox";
             this.RaceComboBox.Size = new System.Drawing.Size(110, 21);
             this.RaceComboBox.TabIndex = 5;
@@ -536,7 +536,7 @@
             // ArmorClassNumericUpDown
             // 
             this.ArmorClassNumericUpDown.Location = new System.Drawing.Point(135, 188);
-            this.ArmorClassNumericUpDown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ArmorClassNumericUpDown.Margin = new System.Windows.Forms.Padding(2);
             this.ArmorClassNumericUpDown.Name = "ArmorClassNumericUpDown";
             this.ArmorClassNumericUpDown.Size = new System.Drawing.Size(56, 20);
             this.ArmorClassNumericUpDown.TabIndex = 27;
@@ -597,7 +597,7 @@
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Location = new System.Drawing.Point(86, 177);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(79, 23);
             this.button5.TabIndex = 26;
@@ -636,7 +636,7 @@
             // InitiativeNumericUpDown
             // 
             this.InitiativeNumericUpDown.Location = new System.Drawing.Point(135, 218);
-            this.InitiativeNumericUpDown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.InitiativeNumericUpDown.Margin = new System.Windows.Forms.Padding(2);
             this.InitiativeNumericUpDown.Name = "InitiativeNumericUpDown";
             this.InitiativeNumericUpDown.Size = new System.Drawing.Size(56, 20);
             this.InitiativeNumericUpDown.TabIndex = 34;
@@ -727,7 +727,7 @@
             this.SkillsGroupBox.Controls.Add(this.PersuasionCheckBox1);
             this.SkillsGroupBox.Controls.Add(this.PersuasionCheckBox2);
             this.SkillsGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SkillsGroupBox.Location = new System.Drawing.Point(595, 10);
+            this.SkillsGroupBox.Location = new System.Drawing.Point(578, 10);
             this.SkillsGroupBox.Name = "SkillsGroupBox";
             this.SkillsGroupBox.Size = new System.Drawing.Size(179, 487);
             this.SkillsGroupBox.TabIndex = 35;
@@ -1490,7 +1490,7 @@
             0,
             0});
             this.SpeedNumericUpDown.Location = new System.Drawing.Point(135, 250);
-            this.SpeedNumericUpDown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SpeedNumericUpDown.Margin = new System.Windows.Forms.Padding(2);
             this.SpeedNumericUpDown.Name = "SpeedNumericUpDown";
             this.SpeedNumericUpDown.Size = new System.Drawing.Size(56, 20);
             this.SpeedNumericUpDown.TabIndex = 39;
@@ -1734,7 +1734,7 @@
             this.FeatureGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FeatureGroupBox.Location = new System.Drawing.Point(394, 224);
             this.FeatureGroupBox.Name = "FeatureGroupBox";
-            this.FeatureGroupBox.Size = new System.Drawing.Size(178, 272);
+            this.FeatureGroupBox.Size = new System.Drawing.Size(178, 273);
             this.FeatureGroupBox.TabIndex = 41;
             this.FeatureGroupBox.TabStop = false;
             this.FeatureGroupBox.Text = "Features and Traits";
@@ -1752,7 +1752,7 @@
             this.FeatureListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FeatureListBox.FormattingEnabled = true;
             this.FeatureListBox.Location = new System.Drawing.Point(6, 75);
-            this.FeatureListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FeatureListBox.Margin = new System.Windows.Forms.Padding(2);
             this.FeatureListBox.Name = "FeatureListBox";
             this.FeatureListBox.Size = new System.Drawing.Size(161, 160);
             this.FeatureListBox.TabIndex = 14;
@@ -1761,7 +1761,7 @@
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(5, 42);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(161, 27);
             this.button3.TabIndex = 3;
@@ -1810,7 +1810,7 @@
             // SpellAttackTextBox
             // 
             this.SpellAttackTextBox.Location = new System.Drawing.Point(135, 365);
-            this.SpellAttackTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SpellAttackTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.SpellAttackTextBox.Name = "SpellAttackTextBox";
             this.SpellAttackTextBox.ReadOnly = true;
             this.SpellAttackTextBox.Size = new System.Drawing.Size(57, 20);
@@ -1830,7 +1830,7 @@
             // SpellSaveTextBox
             // 
             this.SpellSaveTextBox.Location = new System.Drawing.Point(135, 338);
-            this.SpellSaveTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SpellSaveTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.SpellSaveTextBox.Name = "SpellSaveTextBox";
             this.SpellSaveTextBox.ReadOnly = true;
             this.SpellSaveTextBox.Size = new System.Drawing.Size(57, 20);
@@ -1850,7 +1850,7 @@
             // MaxHitPointsTextBox
             // 
             this.MaxHitPointsTextBox.Location = new System.Drawing.Point(135, 159);
-            this.MaxHitPointsTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaxHitPointsTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.MaxHitPointsTextBox.Name = "MaxHitPointsTextBox";
             this.MaxHitPointsTextBox.Size = new System.Drawing.Size(57, 20);
             this.MaxHitPointsTextBox.TabIndex = 3;
@@ -1871,7 +1871,7 @@
             // PassiveWisdomTextBox
             // 
             this.PassiveWisdomTextBox.Location = new System.Drawing.Point(135, 279);
-            this.PassiveWisdomTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PassiveWisdomTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.PassiveWisdomTextBox.Name = "PassiveWisdomTextBox";
             this.PassiveWisdomTextBox.ReadOnly = true;
             this.PassiveWisdomTextBox.Size = new System.Drawing.Size(57, 20);
@@ -1899,10 +1899,10 @@
             this.groupBox1.Controls.Add(this.label43);
             this.groupBox1.Controls.Add(this.PersonalityTraitsRichTextBox);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(784, 12);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Location = new System.Drawing.Point(762, 12);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(245, 485);
             this.groupBox1.TabIndex = 45;
             this.groupBox1.TabStop = false;
@@ -1912,7 +1912,7 @@
             // 
             this.FlawsRichTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FlawsRichTextBox.Location = new System.Drawing.Point(7, 376);
-            this.FlawsRichTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FlawsRichTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.FlawsRichTextBox.Name = "FlawsRichTextBox";
             this.FlawsRichTextBox.Size = new System.Drawing.Size(236, 93);
             this.FlawsRichTextBox.TabIndex = 8;
@@ -1945,7 +1945,7 @@
             // 
             this.BondsRichTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BondsRichTextBox.Location = new System.Drawing.Point(7, 262);
-            this.BondsRichTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BondsRichTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.BondsRichTextBox.Name = "BondsRichTextBox";
             this.BondsRichTextBox.Size = new System.Drawing.Size(236, 93);
             this.BondsRichTextBox.TabIndex = 5;
@@ -1956,7 +1956,7 @@
             // 
             this.IdealsRichTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IdealsRichTextBox.Location = new System.Drawing.Point(7, 144);
-            this.IdealsRichTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.IdealsRichTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.IdealsRichTextBox.Name = "IdealsRichTextBox";
             this.IdealsRichTextBox.Size = new System.Drawing.Size(236, 93);
             this.IdealsRichTextBox.TabIndex = 4;
@@ -1989,7 +1989,7 @@
             // 
             this.PersonalityTraitsRichTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PersonalityTraitsRichTextBox.Location = new System.Drawing.Point(7, 34);
-            this.PersonalityTraitsRichTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PersonalityTraitsRichTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.PersonalityTraitsRichTextBox.Name = "PersonalityTraitsRichTextBox";
             this.PersonalityTraitsRichTextBox.Size = new System.Drawing.Size(236, 93);
             this.PersonalityTraitsRichTextBox.TabIndex = 0;
@@ -2018,7 +2018,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1083, 552);
+            this.ClientSize = new System.Drawing.Size(1032, 557);
             this.Controls.Add(this.BackgroundTextBox);
             this.Controls.Add(this.label44);
             this.Controls.Add(this.groupBox1);
@@ -2053,7 +2053,7 @@
             this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.AlignmentComboBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CreateCharacterForm";
             this.Text = "Character";
             ((System.ComponentModel.ISupportInitialize)(this.StrengthNumericUpDown)).EndInit();

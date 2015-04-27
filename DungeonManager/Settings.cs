@@ -11,6 +11,7 @@ namespace DungeonManager
     static class Settings
     {
         public static List<Character> Characters = new List<Character>();
+        public static Form1 MainForm;
 
         public static void SaveSettings()
         {
@@ -30,7 +31,7 @@ namespace DungeonManager
             }
             catch (Exception e)
             {
-                System.Windows.Forms.MessageBox.Show("Could not save settings file. Check permissions.", "XDR Connector");
+                System.Windows.Forms.MessageBox.Show("Could not save settings file. Check permissions.", "DungeonManager");
             }
         }
 

@@ -456,6 +456,7 @@ namespace DungeonManager
             Settings.Characters.Add(c);
             Settings.SaveSettings();
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
+            Settings.MainForm.RefreshCharacters();
             this.Close();
         }
 
