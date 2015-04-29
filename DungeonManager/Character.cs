@@ -64,6 +64,7 @@ namespace DungeonManager
             _guid = Guid.NewGuid().ToString();
         }
 
+        [System.Xml.Serialization.XmlIgnore]
         public int ProficiencyBonus
         {
             get 
@@ -71,10 +72,6 @@ namespace DungeonManager
                 int totalLevel = Levels.Sum(item => item._level);
                 return 2 + (totalLevel - 1) / 4;
             }
-            set { }
-            // Proficiency value is calculated and set by external calling code, this is not a clean design
-            // in order to not break the program, this empty setter has been provided.
-            // It should be safe to remove the offending external code along with this setter.
         }
 
         public static int GetModifier(int AbilityScore)

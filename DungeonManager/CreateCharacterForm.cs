@@ -65,15 +65,7 @@ namespace DungeonManager
                 ClassListBox.Items.Add(l._class + ":" + l._level);
                 totalLevels += l._level;
             }
-            if (totalLevels < 5)
-                c.ProficiencyBonus = 2;
-            else if (totalLevels < 9)
-                c.ProficiencyBonus = 3;
-            else if (totalLevels < 13)
-                c.ProficiencyBonus = 4;
-            else if (totalLevels < 17)
-                c.ProficiencyBonus = 5;
-            else c.ProficiencyBonus = 6;
+
 
             ProficiencyBonuxTextBox.Text = c.ProficiencyBonus.ToString();
 
