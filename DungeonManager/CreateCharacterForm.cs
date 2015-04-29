@@ -440,8 +440,25 @@ namespace DungeonManager
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ClassListBox.Items.Add(ClassComboBox.Text +":"+ LevelNumericUpDown.Value);
-            c.Levels.Add(new Level() { _class = (CharacterClass)ClassComboBox.SelectedItem, _level = (int)LevelNumericUpDown.Value });
+            // Validate user input
+            CharacterClass charClass;
+            int level = (int)LevelNumericUpDown.Value;
+            if (level < 1 || level > 20)
+            {
+                MessageBox.Show("Added class level must be between 1 and 20");
+                return;
+            }
+            try
+            {
+                charClass = Util.GetClassFromString(ClassComboBox.Text);
+            }
+            catch(ArgumentOutOfRangeException ex)
+            {
+                MessageBox.Show("The entered class name: \"" + ClassComboBox.Text + "\" is not valid");
+                return;
+            }
+            c.Levels.Add(new Level() { _class = charClass, _level = level });
+            ClassListBox.Items.Add(charClass.ToString() +":"+ level);   
             ShowCharacter();
         }
 

@@ -33,7 +33,6 @@ namespace DungeonManager
 
         public int Initiative;
         public int Speed;
-        public int ProficiencyBonus;
 
         public int Acrobatics = 0; // 0 - not proficient, 1 - proficient, 2 - double proficient
         public int AnimalHandling = 0;
@@ -65,7 +64,75 @@ namespace DungeonManager
             _guid = Guid.NewGuid().ToString();
         }
 
+        public int ProficiencyBonus
+        {
+            get 
+            {
+                int totalLevel = Levels.Sum(item => item._level);
+                return 2 + (totalLevel - 1) / 4;
+            }
+            set { }
+            // Proficiency value is calculated and set by external calling code, this is not a clean design
+            // in order to not break the program, this empty setter has been provided.
+            // It should be safe to remove the offending external code along with this setter.
+        }
 
+        public static int GetModifier(int AbilityScore)
+        {
+            // As per DMG, 30 is the largest ability score a creature can have.
+            if (AbilityScore < 1 || AbilityScore > 30)
+                throw new ArgumentOutOfRangeException("Must be 1 through 25");
+            return (int)Math.Floor(((double)(AbilityScore - 10)) / 2.0);
+        }
+
+        private int getCastingAbilityVal()
+        {
+            int retVal = 0;
+            List<CharacterClass> chaClasses = new List<CharacterClass>() {
+                CharacterClass.Bard, 
+                CharacterClass.Sorcerer, 
+                CharacterClass.Paladin, 
+                CharacterClass.Warlock 
+            };
+            List<CharacterClass> intClasses = new List<CharacterClass>() {
+                CharacterClass.Fighter,
+                CharacterClass.Rogue,
+                CharacterClass.Wizard
+            };
+            List<CharacterClass> wisClasses = new List<CharacterClass>() {
+                CharacterClass.Druid,
+                CharacterClass.Ranger,
+                CharacterClass.Monk,
+                CharacterClass.Cleric
+            };
+
+            foreach (Level l in Levels)
+            {
+                if(wisClasses.Contains(l._class))
+                    retVal = (GetModifier(Wisdom) > retVal) ? GetModifier(Wisdom) : retVal;
+                if(intClasses.Contains(l._class))
+                    retVal = (GetModifier(Intelligence) > retVal) ? GetModifier(Intelligence) : retVal;
+                if (chaClasses.Contains(l._class))
+                    retVal = (GetModifier(Charisma) > retVal) ? GetModifier(Charisma) : retVal;
+            }
+            return retVal;
+        }
+
+        public int SpellDC
+        {
+            get 
+            {
+                return getCastingAbilityVal() + 8 + ProficiencyBonus; 
+            }
+        }
+
+        public int SpellAttackModifier
+        {
+            get 
+            {
+                return getCastingAbilityVal() + ProficiencyBonus; 
+            }
+        }
     }
 
     [Serializable]
@@ -96,9 +163,8 @@ namespace DungeonManager
         Arakocra,
         DeepGnome,
         Goliath
-
-    
     }
+
     [Serializable]
     public enum CharacterClass
     { 
@@ -115,6 +181,7 @@ namespace DungeonManager
         Warlock,
         Wizard
     }
+
     [Serializable]
     public enum CharacterAlignment
     { 
