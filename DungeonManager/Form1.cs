@@ -44,6 +44,8 @@ namespace DungeonManager
             for (int x = 0; x < Settings.Characters.Count; x++)
             {
                 int pp = 10 + Util.GetModifier(Settings.Characters[x].Wisdom);
+                if (Settings.Characters[x].WisdomSavingThrow)
+                    pp += Settings.Characters[x].ProficiencyBonus;
                 int dc = Util.GetSpellDC(Settings.Characters[x]);
 
                 dataGridView1.Rows.Add(Settings.Characters[x]._guid, Settings.Characters[x].Name, Settings.Characters[x].ArmorClass, pp, dc);

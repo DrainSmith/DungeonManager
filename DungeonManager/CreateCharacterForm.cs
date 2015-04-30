@@ -77,7 +77,10 @@ namespace DungeonManager
 
             ProficiencyBonuxTextBox.Text = c.ProficiencyBonus.ToString();
 
-            PassiveWisdomTextBox.Text = (10 + Util.GetModifier(c.Wisdom)).ToString();
+            int pp = (10 + Util.GetModifier(c.Wisdom));
+            if (c.WisdomSavingThrow)
+                pp += c.ProficiencyBonus;
+            PassiveWisdomTextBox.Text = pp.ToString();
             SpellSaveTextBox.Text = Util.GetSpellDC(c).ToString();
             SpellAttackTextBox.Text = Util.GetSpellAttackModifier(c).ToString();
 
