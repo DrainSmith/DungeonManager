@@ -65,7 +65,7 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -83,7 +83,7 @@
             // 
             this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button3.Location = new System.Drawing.Point(0, 0);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(603, 61);
             this.button3.TabIndex = 5;
@@ -96,7 +96,7 @@
             this.ChracterUpButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ChracterUpButton.Location = new System.Drawing.Point(0, 0);
             this.ChracterUpButton.Name = "ChracterUpButton";
-            this.ChracterUpButton.Size = new System.Drawing.Size(72, 213);
+            this.ChracterUpButton.Size = new System.Drawing.Size(72, 211);
             this.ChracterUpButton.TabIndex = 6;
             this.ChracterUpButton.Text = "/\\";
             this.ChracterUpButton.UseVisualStyleBackColor = true;
@@ -107,7 +107,7 @@
             this.CharacterDownButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CharacterDownButton.Location = new System.Drawing.Point(0, 0);
             this.CharacterDownButton.Name = "CharacterDownButton";
-            this.CharacterDownButton.Size = new System.Drawing.Size(72, 209);
+            this.CharacterDownButton.Size = new System.Drawing.Size(72, 211);
             this.CharacterDownButton.TabIndex = 7;
             this.CharacterDownButton.Text = "\\/";
             this.CharacterDownButton.UseVisualStyleBackColor = true;
@@ -176,7 +176,7 @@
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.IsSplitterFixed = true;
             this.splitContainer1.Location = new System.Drawing.Point(0, 35);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -187,6 +187,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.button3);
+            this.splitContainer1.Panel2MinSize = 50;
             this.splitContainer1.Size = new System.Drawing.Size(603, 495);
             this.splitContainer1.SplitterDistance = 428;
             this.splitContainer1.SplitterWidth = 6;
@@ -195,9 +196,8 @@
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.IsSplitterFixed = true;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
@@ -207,6 +207,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
+            this.splitContainer2.Panel2MinSize = 40;
             this.splitContainer2.Size = new System.Drawing.Size(603, 428);
             this.splitContainer2.SplitterDistance = 525;
             this.splitContainer2.SplitterWidth = 6;
@@ -215,9 +216,9 @@
             // splitContainer3
             // 
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer3.IsSplitterFixed = true;
             this.splitContainer3.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer3.Margin = new System.Windows.Forms.Padding(4);
+            this.splitContainer3.MinimumSize = new System.Drawing.Size(72, 428);
             this.splitContainer3.Name = "splitContainer3";
             this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -229,7 +230,7 @@
             // 
             this.splitContainer3.Panel2.Controls.Add(this.CharacterDownButton);
             this.splitContainer3.Size = new System.Drawing.Size(72, 428);
-            this.splitContainer3.SplitterDistance = 213;
+            this.splitContainer3.SplitterDistance = 211;
             this.splitContainer3.SplitterWidth = 6;
             this.splitContainer3.TabIndex = 8;
             // 
