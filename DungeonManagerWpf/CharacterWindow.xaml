@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:DungeonManagerWpf"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
-        Title="Character" Height="716" Width="838" AllowsTransparency="True" WindowStyle="None" Loaded="Window_Loaded" Closing="Window_Closing" ResizeMode="CanResizeWithGrip" SizeChanged="Window_SizeChanged">
+        Title="Character" Height="716" Width="838" AllowsTransparency="True" WindowStyle="None" Loaded="Window_Loaded" Closing="Window_Closing" ResizeMode="CanResizeWithGrip" SizeChanged="Window_SizeChanged" Icon="robe_O8p_icon.ico">
     <Window.Resources>
         <ObjectDataProvider x:Key="dataFromRace" MethodName="GetValues"
                             ObjectType="{x:Type sys:Enum}">
@@ -50,7 +50,7 @@
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
                                 <StackPanel Grid.ColumnSpan="2">
-                                    <Grid Margin="5">
+                                    <Grid Margin="5,15,5,5">
                                         <Label HorizontalAlignment="Left" FontSize="14">Name</Label>
                                         <TextBox Width="170" HorizontalAlignment="Right" Name="NameTextBox" TextChanged="NameTextBox_TextChanged"/>
                                     </Grid>
@@ -81,31 +81,23 @@
                                         </StackPanel>
                                     </GroupBox>
 
-                                    <Grid Margin="10,0,10,10">
-                                        <Label HorizontalAlignment="Left" FontSize="14" >Armor Class</Label>
-                                        <local:NumericUpDown MinValue="0" HorizontalAlignment="Right" x:Name="ArmorClassNumeric" OnValueChangedEvent="ArmorClassNumeric_OnValueChangedEvent"/>
-                                    </Grid>
-                                    <Grid Margin="10,0,10,10">
+
+                                    <Grid Margin="10,5,10,10">
                                         <Label HorizontalAlignment="Left" FontSize="14" >Max Hit Points</Label>
                                         <TextBox Width="70" HorizontalAlignment="Right" Name="HitPointsTextBox"/>
-                                    </Grid>
-                                    <Grid Margin="10,0,10,10">
-                                        <Label HorizontalAlignment="Left" FontSize="14" >Initiative</Label>
-                                        <local:NumericUpDown MinValue="0" HorizontalAlignment="Right" x:Name="InitiativeNumeric" OnValueChangedEvent="InitiativeNumeric_OnValueChangedEvent"/>
                                     </Grid>
                                     <Grid Margin="10,0,10,10">
                                         <Label HorizontalAlignment="Left" FontSize="14" >Speed</Label>
                                         <TextBox Width="70" HorizontalAlignment="Right" Name="SpeedTextBox" TextChanged="SpeedTextBox_TextChanged" PreviewTextInput="SpeedTextBox_PreviewTextInput"/>
                                     </Grid>
                                     <Grid Margin="10,0,10,10">
-                                        <Label HorizontalAlignment="Left" FontSize="14" >Spell Save DC</Label>
-                                        <Label HorizontalAlignment="Right" Name="SpellSaveLabel"/>
+                                        <Label HorizontalAlignment="Left" FontSize="14" >Initiative</Label>
+                                        <local:NumericUpDown MinValue="-5" HorizontalAlignment="Right" x:Name="InitiativeNumeric" OnValueChangedEvent="InitiativeNumeric_OnValueChangedEvent"/>
                                     </Grid>
                                     <Grid Margin="10,0,10,10">
-                                        <Label HorizontalAlignment="Left" FontSize="14" >Spell Atack Mod</Label>
-                                        <Label HorizontalAlignment="Right" Name="SpellAttackLabel" />
+                                        <Label HorizontalAlignment="Left" FontSize="14" >Armor Class</Label>
+                                        <local:NumericUpDown MinValue="0" HorizontalAlignment="Right" x:Name="ArmorClassNumeric" OnValueChangedEvent="ArmorClassNumeric_OnValueChangedEvent"/>
                                     </Grid>
-
                                 </StackPanel>
                                 <StackPanel Grid.Column="2">
                                     <GroupBox Width="270">
@@ -125,7 +117,15 @@
                                             </Grid>
                                         </StackPanel>
                                     </GroupBox>
-                                    <Grid Margin="20,15,20,0">
+                                    <Grid Margin="5,0,5,0">
+                                        <Label HorizontalAlignment="Left" FontSize="14" >Spell Save DC</Label>
+                                        <Label HorizontalAlignment="Right" Name="SpellSaveLabel"/>
+                                    </Grid>
+                                    <Grid Margin="5,0,5,0">
+                                        <Label HorizontalAlignment="Left" FontSize="14" >Spell Atack Mod</Label>
+                                        <Label HorizontalAlignment="Right" Name="SpellAttackLabel" />
+                                    </Grid>
+                                    <Grid Margin="5,0,5,0">
                                         <Label HorizontalAlignment="Left" Width="200" FontSize="14">Proficency Bonus</Label>
                                         <Label HorizontalAlignment="Right" x:Name="ProficiencyNumeric" Content="2"/>
                                     </Grid>
@@ -142,7 +142,7 @@
                                             <local:SkillControl SkillName="Charisma" HideExpertise="True" x:Name="CharismaSavingThrow" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=CharismaAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="CharismaSavingThrow_OnProficiencyChangedEvent"/>
                                         </StackPanel>
                                     </GroupBox>
-
+                                    
                                 </StackPanel>
                                 <StackPanel Grid.Column="3">
                                     <GroupBox Height="616" VerticalAlignment="Top" Margin="2">
@@ -150,27 +150,27 @@
                                             <Label FontSize="16" FontWeight="Bold">Skills</Label>
                                         </GroupBox.Header>
                                         <StackPanel>
-                                            <local:SkillControl SkillName="Acrobatics" x:Name="AcrobaticsSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=DexterityAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="AcrobaticsSkill_OnProficiencyChangedEvent"/>
-                                            <local:SkillControl SkillName="Animal Handling" x:Name="AnimalHandlingSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=WisdomAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="AnimalHandlingSkill_OnProficiencyChangedEvent"/>
-                                            <local:SkillControl SkillName="Arcana" x:Name="ArcanaSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=IntelligenceAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="ArcanaSkill_OnProficiencyChangedEvent"/>
-                                            <local:SkillControl SkillName="Athletics" x:Name="AthleticsSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=StrengthAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="AthleticsSkill_OnProficiencyChangedEvent"/>
-                                            <local:SkillControl SkillName="Deception" x:Name="DeceptionSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=CharismaAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="DeceptionSkill_OnProficiencyChangedEvent"/>
-                                            <local:SkillControl SkillName="History" x:Name="HistorySkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=IntelligenceAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="HistorySkill_OnProficiencyChangedEvent"/>
-                                            <local:SkillControl SkillName="Insight" x:Name="InsightSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=WisdomAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="InsightSkill_OnProficiencyChangedEvent"/>
-                                            <local:SkillControl SkillName="Intimidation" x:Name="IntimidationSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=CharismaAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="IntimidationSkill_OnProficiencyChangedEvent"/>
-                                            <local:SkillControl SkillName="Investigation" x:Name="InvestigationSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=IntelligenceAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="InvestigationSkill_OnProficiencyChangedEvent"/>
-                                            <local:SkillControl SkillName="Medicine" x:Name="MedicineSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=WisdomAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="MedicineSkill_OnProficiencyChangedEvent"/>
-                                            <local:SkillControl SkillName="Nature" x:Name="NatureSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=IntelligenceAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="NatureSkill_OnProficiencyChangedEvent"/>
-                                            <local:SkillControl SkillName="Perception" x:Name="PerceptionSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=WisdomAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="PerceptionSkill_OnProficiencyChangedEvent"/>
-                                            <local:SkillControl SkillName="Performance" x:Name="PerformanceSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=CharismaAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="PerformanceSkill_OnProficiencyChangedEvent"/>
-                                            <local:SkillControl SkillName="Persuasion" x:Name="PersuasionSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=CharismaAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="PersuasionSkill_OnProficiencyChangedEvent"/>
-                                            <local:SkillControl SkillName="Religion" x:Name="ReligionSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=IntelligenceAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="ReligionSkill_OnProficiencyChangedEvent"/>
-                                            <local:SkillControl SkillName="Sleight of Hand" x:Name="SleightOfHandSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=DexterityAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="SleightOfHandSkill_OnProficiencyChangedEvent"/>
-                                            <local:SkillControl SkillName="Stealth" x:Name="StealthSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=DexterityAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="StealthSkill_OnProficiencyChangedEvent"/>
-                                            <local:SkillControl SkillName="Survival" x:Name="SurvivalSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=WisdomAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="SurvivalSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Acrobatics" x:Name="AcrobaticsSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=DexterityAttribute, Path=AttributeValue}" JackOfAllTrades="{Binding ElementName=JackOfAllTradesCheckBox, Path=IsChecked}" OnProficiencyChangedEvent="AcrobaticsSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Animal Handling" x:Name="AnimalHandlingSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=WisdomAttribute, Path=AttributeValue}" JackOfAllTrades="{Binding ElementName=JackOfAllTradesCheckBox, Path=IsChecked}" OnProficiencyChangedEvent="AnimalHandlingSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Arcana" x:Name="ArcanaSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=IntelligenceAttribute, Path=AttributeValue}" JackOfAllTrades="{Binding ElementName=JackOfAllTradesCheckBox, Path=IsChecked}" OnProficiencyChangedEvent="ArcanaSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Athletics" x:Name="AthleticsSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=StrengthAttribute, Path=AttributeValue}" JackOfAllTrades="{Binding ElementName=JackOfAllTradesCheckBox, Path=IsChecked}" OnProficiencyChangedEvent="AthleticsSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Deception" x:Name="DeceptionSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=CharismaAttribute, Path=AttributeValue}" JackOfAllTrades="{Binding ElementName=JackOfAllTradesCheckBox, Path=IsChecked}" OnProficiencyChangedEvent="DeceptionSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="History" x:Name="HistorySkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=IntelligenceAttribute, Path=AttributeValue}" JackOfAllTrades="{Binding ElementName=JackOfAllTradesCheckBox, Path=IsChecked}" OnProficiencyChangedEvent="HistorySkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Insight" x:Name="InsightSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=WisdomAttribute, Path=AttributeValue}" JackOfAllTrades="{Binding ElementName=JackOfAllTradesCheckBox, Path=IsChecked}" OnProficiencyChangedEvent="InsightSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Intimidation" x:Name="IntimidationSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=CharismaAttribute, Path=AttributeValue}" JackOfAllTrades="{Binding ElementName=JackOfAllTradesCheckBox, Path=IsChecked}" OnProficiencyChangedEvent="IntimidationSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Investigation" x:Name="InvestigationSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=IntelligenceAttribute, Path=AttributeValue}" JackOfAllTrades="{Binding ElementName=JackOfAllTradesCheckBox, Path=IsChecked}" OnProficiencyChangedEvent="InvestigationSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Medicine" x:Name="MedicineSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=WisdomAttribute, Path=AttributeValue}" JackOfAllTrades="{Binding ElementName=JackOfAllTradesCheckBox, Path=IsChecked}" OnProficiencyChangedEvent="MedicineSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Nature" x:Name="NatureSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=IntelligenceAttribute, Path=AttributeValue}" JackOfAllTrades="{Binding ElementName=JackOfAllTradesCheckBox, Path=IsChecked}" OnProficiencyChangedEvent="NatureSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Perception" x:Name="PerceptionSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=WisdomAttribute, Path=AttributeValue}" JackOfAllTrades="{Binding ElementName=JackOfAllTradesCheckBox, Path=IsChecked}" OnProficiencyChangedEvent="PerceptionSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Performance" x:Name="PerformanceSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=CharismaAttribute, Path=AttributeValue}" JackOfAllTrades="{Binding ElementName=JackOfAllTradesCheckBox, Path=IsChecked}" OnProficiencyChangedEvent="PerformanceSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Persuasion" x:Name="PersuasionSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=CharismaAttribute, Path=AttributeValue}" JackOfAllTrades="{Binding ElementName=JackOfAllTradesCheckBox, Path=IsChecked}" OnProficiencyChangedEvent="PersuasionSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Religion" x:Name="ReligionSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=IntelligenceAttribute, Path=AttributeValue}" JackOfAllTrades="{Binding ElementName=JackOfAllTradesCheckBox, Path=IsChecked}" OnProficiencyChangedEvent="ReligionSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Sleight of Hand" x:Name="SleightOfHandSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=DexterityAttribute, Path=AttributeValue}" JackOfAllTrades="{Binding ElementName=JackOfAllTradesCheckBox, Path=IsChecked}" OnProficiencyChangedEvent="SleightOfHandSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Stealth" x:Name="StealthSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=DexterityAttribute, Path=AttributeValue}" JackOfAllTrades="{Binding ElementName=JackOfAllTradesCheckBox, Path=IsChecked}" OnProficiencyChangedEvent="StealthSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Survival" x:Name="SurvivalSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=WisdomAttribute, Path=AttributeValue}" JackOfAllTrades="{Binding ElementName=JackOfAllTradesCheckBox, Path=IsChecked}" OnProficiencyChangedEvent="SurvivalSkill_OnProficiencyChangedEvent"/>
                                         </StackPanel>
                                     </GroupBox>
-                                    <Grid Margin="20,0,20,10">
+                                    <Grid Margin="10,5,10,10">
                                         <Label HorizontalAlignment="Left" FontSize="16" FontWeight="DemiBold" >Passive Perception</Label>
                                         <Label HorizontalAlignment="Right" FontWeight="DemiBold" Name="PassivePerceptionLabel" Content="10" FontSize="16"/>
                                     </Grid>
@@ -196,6 +196,7 @@
                                             <Button Content="Remove" Height="30" Margin="4" Name="RemoveFeaturebutton" Click="RemoveFeaturebutton_Click" />
                                         </StackPanel>
                                     </GroupBox>
+                                    <CheckBox Content="Jack of All Trades" Visibility="Collapsed" Name="JackOfAllTradesCheckBox"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1">
                                     <GroupBox>

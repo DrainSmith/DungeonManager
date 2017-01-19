@@ -52,6 +52,12 @@ namespace DungeonManagerWpf
             set {SetValue(ModifierStringProperty, value);}
         }
 
+        public bool JackOfAllTrades
+        {
+            get { return (bool)GetValue(JackOfAllTradesProperty); }
+            set { SetValue(JackOfAllTradesProperty, value); }
+        }
+
         public static readonly DependencyProperty SkillNameProperty =
       DependencyProperty.Register("SkillName", typeof(string),
         typeof(SkillControl), new PropertyMetadata(""));
@@ -59,6 +65,17 @@ namespace DungeonManagerWpf
         public static readonly DependencyProperty BaseAttributeModProperty =
       DependencyProperty.Register("BaseAttribute", typeof(int),
         typeof(SkillControl), new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.None, new PropertyChangedCallback(BaseAttributeModProperty_PropertyChanged)));
+
+        public static readonly DependencyProperty JackOfAllTradesProperty = DependencyProperty.Register("JackOfAllTrades", typeof(bool), typeof(SkillControl), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.None, new PropertyChangedCallback(JackOfAllTradesProperty_PropertyChanged)));
+
+        private static void JackOfAllTradesProperty_PropertyChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
+        {
+            if (args.OldValue != args.NewValue)
+            {
+                SkillControl c = (SkillControl)obj;
+                c.UpdateAllValues();
+            }
+        }
 
         public static readonly DependencyProperty ProficiencyBonusProperty = DependencyProperty.Register("ProficiencyBonus", typeof(int), typeof (SkillControl), new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.None, new PropertyChangedCallback(ProficiencyBonusProperty_PropertyChanged)));
 
@@ -115,6 +132,8 @@ namespace DungeonManagerWpf
                     temp = temp + ProficiencyBonus;
                 else if (SkillProficiency == Proficiency.Expertise)
                     temp = temp + ProficiencyBonus + ProficiencyBonus;
+                else if (JackOfAllTrades)
+                    temp = temp + (int)Math.Floor((double)(ProficiencyBonus / 2));
                 return temp;
             }
         }

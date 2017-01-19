@@ -11,8 +11,7 @@ namespace DungeonManagerWpf
     static class Settings
     {
         public static List<Character> Characters = new List<Character>();
-        public static MainWindow MainWIndow;
-
+        
         public static void SaveSettings()
         {
             string settingsPath = System.AppDomain.CurrentDomain.BaseDirectory + @"\dmsave.xml";

@@ -22,13 +22,17 @@ namespace DungeonManagerWpf
     /// </summary>
     public partial class MainWindow : Window
     {
+        bool _isLoaded = false;
+        private double _aspectRatio;
+
         public MainWindow()
         {
             InitializeComponent();
             Settings.LoadSettings();
-            Settings.MainWIndow = this;
-
             RefreshCharacters();
+            var dice = new DiceWindow();
+            dice.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            dice.Show();
         }
 
         private void titlebar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -39,6 +43,21 @@ namespace DungeonManagerWpf
             }
             else
                 DragMove();
+        }
+
+        protected override void OnRenderSizeChanged(SizeChangedInfo sizeInfo)
+        {
+            if (_isLoaded)
+            {
+                if (sizeInfo.WidthChanged)
+                {
+                    this.Width = sizeInfo.NewSize.Height * _aspectRatio;
+                }
+                else
+                {
+                    this.Height = sizeInfo.NewSize.Width * _aspectRatio;
+                }
+            }
         }
 
         private void MinimizeButton_Click(object sender, RoutedEventArgs e)
@@ -70,6 +89,8 @@ namespace DungeonManagerWpf
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             //RefreshCharacters();
+            _aspectRatio = this.ActualWidth / this.ActualHeight;
+            _isLoaded = true;
         }
 
         private void CharacterDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -77,11 +98,15 @@ namespace DungeonManagerWpf
             if (CharacterDataGrid.SelectedIndex != -1)
             {
                 Character c = (Character)CharacterDataGrid.SelectedItem;
-                CharacterWindow cw = new CharacterWindow(c);
-                cw.Closed += CharacterWindow_Closed;
-                cw.Show();
-                //MessageBox.Show(c.Name);
+                OpenCharacter(c);
             }
+        }
+
+        private void OpenCharacter(Character c)
+        {
+            CharacterWindow cw = new CharacterWindow(c);
+            cw.Closed += CharacterWindow_Closed;
+            cw.Show();
         }
 
         private void CharacterDataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
@@ -90,8 +115,7 @@ namespace DungeonManagerWpf
                 (e.PropertyName == "HitPoints") ||
                 (e.PropertyName == "ProficiencyBonus") ||
                 (e.PropertyName == "SpellAttackModifier") ||
-                (e.PropertyName == "_sortOrder") ||
-                (e.PropertyName == "ExperiencePoints")
+                (e.PropertyName == "_sortOrder") 
                 )
                 e.Cancel = true;
 
@@ -127,14 +151,32 @@ namespace DungeonManagerWpf
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            var cw = new CharacterWindow(new Character());
-            cw.Closed += CharacterWindow_Closed;
-            cw.Show();
+            OpenCharacter(new Character());
         }
 
         private void CharacterWindow_Closed(object sender, EventArgs e)
         {
             RefreshCharacters();
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            if (CharacterDataGrid.SelectedIndex != -1)
+            {
+                Character currentChar = (Character)CharacterDataGrid.SelectedItem;
+                Settings.Characters.Remove(currentChar);
+                Settings.SaveSettings();
+                RefreshCharacters();
+            }
+       }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            if (CharacterDataGrid.SelectedIndex != -1)
+            {
+                Character currentChar = (Character)CharacterDataGrid.SelectedItem;
+                OpenCharacter(currentChar);
+            }
         }
     }
 

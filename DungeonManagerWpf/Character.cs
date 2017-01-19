@@ -179,7 +179,7 @@ namespace DungeonManagerWpf
         Gnome,
         HalfElf,
         HalfOrc,
-        Tieling,
+        Tiefling,
         AirGenasi,
         EarthGenasi,
         WaterGenasi,

@@ -22,7 +22,8 @@ namespace DungeonManagerWpf
     {
         private Character _character;
         bool _changeOccured = false;
-        double _windowRatio;
+        private bool _isLoaded;
+        private double _aspectRatio;
 
         public CharacterWindow(Character c)
         {
@@ -38,6 +39,9 @@ namespace DungeonManagerWpf
         private void LoadCharacter(Character c)
         {
             this._character = c;
+            LevelsListBox.ItemsSource = c.Levels;
+            FeaturesListBox.ItemsSource = c.Features;
+            CheckForJackOfAllTrades();
             ProficiencyNumeric.Content = c.ProficiencyBonus;
             NameTextBox.Text = c.Name;
             RaceComboBox.SelectedItem = c.Race;
@@ -81,14 +85,28 @@ namespace DungeonManagerWpf
             InitiativeNumeric.Value = c.Initiative;
             HitPointsTextBox.Text = c.HitPoints.ToString();
 
-            LevelsListBox.ItemsSource = c.Levels;
-            FeaturesListBox.ItemsSource = c.Features;
+            
             PersonalityTextBox.Text = c.PersonalityTraits;
             IdealsTextBox.Text = c.Ideals;
             BondsTextBox.Text = c.Bonds;
             FlawsTextBox.Text = c.Flaws;
             BackgroundTextBox.Text = c.Background;
             _changeOccured = false;
+        }
+
+        protected override void OnRenderSizeChanged(SizeChangedInfo sizeInfo)
+        {
+            if (_isLoaded)
+            {
+                if (sizeInfo.WidthChanged)
+                {
+                    this.Width = sizeInfo.NewSize.Height * _aspectRatio;
+                }
+                else
+                {
+                    this.Height = sizeInfo.NewSize.Width * _aspectRatio;
+                }
+            }
         }
 
         private void SaveCharacter(Character c)
@@ -130,7 +148,8 @@ namespace DungeonManagerWpf
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            _windowRatio = this.ActualWidth / this.ActualHeight;
+            _aspectRatio = this.ActualWidth / this.ActualHeight;
+            _isLoaded = true;
             LoadCharacter(_character);
         }
 
@@ -458,11 +477,21 @@ namespace DungeonManagerWpf
         {
             _character.Features.Remove(NewFeatureTextBox.Text);
             _character.Features.Add(NewFeatureTextBox.Text);
+            NewFeatureTextBox.Text = String.Empty;
             FeaturesListBox.ItemsSource = null;
             FeaturesListBox.Items.Clear();
             FeaturesListBox.ItemsSource = _character.Features;
+            CheckForJackOfAllTrades();
             _changeOccured = true;
 
+        }
+
+        private void CheckForJackOfAllTrades()
+        {
+            var i = _character.Features.FindIndex(f => f.ToLower() == "jackofalltrades" || f.ToLower() == "jack of all trades");
+            if (i != -1)
+                JackOfAllTradesCheckBox.IsChecked = true;
+            else JackOfAllTradesCheckBox.IsChecked = false;
         }
 
         private void RemoveFeaturebutton_Click(object sender, RoutedEventArgs e)
@@ -473,6 +502,7 @@ namespace DungeonManagerWpf
                 FeaturesListBox.ItemsSource = null;
                 FeaturesListBox.Items.Clear();
                 FeaturesListBox.ItemsSource = _character.Features;
+                CheckForJackOfAllTrades();
                 _changeOccured = true;
             }
         }
