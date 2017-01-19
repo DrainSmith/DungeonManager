@@ -71,11 +71,12 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(525, 428);
+            this.dataGridView1.Size = new System.Drawing.Size(350, 275);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -83,9 +84,8 @@
             // 
             this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button3.Location = new System.Drawing.Point(0, 0);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(603, 61);
+            this.button3.Size = new System.Drawing.Size(402, 50);
             this.button3.TabIndex = 5;
             this.button3.Text = "Open Selected Character";
             this.button3.UseVisualStyleBackColor = true;
@@ -95,8 +95,9 @@
             // 
             this.ChracterUpButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ChracterUpButton.Location = new System.Drawing.Point(0, 0);
+            this.ChracterUpButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ChracterUpButton.Name = "ChracterUpButton";
-            this.ChracterUpButton.Size = new System.Drawing.Size(72, 211);
+            this.ChracterUpButton.Size = new System.Drawing.Size(48, 140);
             this.ChracterUpButton.TabIndex = 6;
             this.ChracterUpButton.Text = "/\\";
             this.ChracterUpButton.UseVisualStyleBackColor = true;
@@ -106,8 +107,9 @@
             // 
             this.CharacterDownButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CharacterDownButton.Location = new System.Drawing.Point(0, 0);
+            this.CharacterDownButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CharacterDownButton.Name = "CharacterDownButton";
-            this.CharacterDownButton.Size = new System.Drawing.Size(72, 211);
+            this.CharacterDownButton.Size = new System.Drawing.Size(48, 141);
             this.CharacterDownButton.TabIndex = 7;
             this.CharacterDownButton.Text = "\\/";
             this.CharacterDownButton.UseVisualStyleBackColor = true;
@@ -120,8 +122,7 @@
             this.editToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(603, 35);
+            this.menuStrip1.Size = new System.Drawing.Size(402, 24);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -131,20 +132,20 @@
             this.saveSelectedCharacterToolStripMenuItem,
             this.importCharacterToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(50, 29);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // saveSelectedCharacterToolStripMenuItem
             // 
             this.saveSelectedCharacterToolStripMenuItem.Name = "saveSelectedCharacterToolStripMenuItem";
-            this.saveSelectedCharacterToolStripMenuItem.Size = new System.Drawing.Size(290, 30);
+            this.saveSelectedCharacterToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
             this.saveSelectedCharacterToolStripMenuItem.Text = "Export Selected Character";
             this.saveSelectedCharacterToolStripMenuItem.Click += new System.EventHandler(this.saveSelectedCharacterToolStripMenuItem_Click);
             // 
             // importCharacterToolStripMenuItem
             // 
             this.importCharacterToolStripMenuItem.Name = "importCharacterToolStripMenuItem";
-            this.importCharacterToolStripMenuItem.Size = new System.Drawing.Size(290, 30);
+            this.importCharacterToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
             this.importCharacterToolStripMenuItem.Text = "Import Character from file";
             this.importCharacterToolStripMenuItem.Click += new System.EventHandler(this.importCharacterToolStripMenuItem_Click);
             // 
@@ -154,20 +155,20 @@
             this.addNewCharacterToolStripMenuItem,
             this.deleteSelectedCharacterToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // addNewCharacterToolStripMenuItem
             // 
             this.addNewCharacterToolStripMenuItem.Name = "addNewCharacterToolStripMenuItem";
-            this.addNewCharacterToolStripMenuItem.Size = new System.Drawing.Size(284, 30);
+            this.addNewCharacterToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.addNewCharacterToolStripMenuItem.Text = "Create New Character";
             this.addNewCharacterToolStripMenuItem.Click += new System.EventHandler(this.button1_Click);
             // 
             // deleteSelectedCharacterToolStripMenuItem
             // 
             this.deleteSelectedCharacterToolStripMenuItem.Name = "deleteSelectedCharacterToolStripMenuItem";
-            this.deleteSelectedCharacterToolStripMenuItem.Size = new System.Drawing.Size(284, 30);
+            this.deleteSelectedCharacterToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.deleteSelectedCharacterToolStripMenuItem.Text = "Delete Selected Character";
             this.deleteSelectedCharacterToolStripMenuItem.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -175,8 +176,7 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.IsSplitterFixed = true;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 35);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 24);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -188,16 +188,14 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.button3);
             this.splitContainer1.Panel2MinSize = 50;
-            this.splitContainer1.Size = new System.Drawing.Size(603, 495);
-            this.splitContainer1.SplitterDistance = 428;
-            this.splitContainer1.SplitterWidth = 6;
+            this.splitContainer1.Size = new System.Drawing.Size(402, 329);
+            this.splitContainer1.SplitterDistance = 275;
             this.splitContainer1.TabIndex = 9;
             // 
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
@@ -208,17 +206,15 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
             this.splitContainer2.Panel2MinSize = 40;
-            this.splitContainer2.Size = new System.Drawing.Size(603, 428);
-            this.splitContainer2.SplitterDistance = 525;
-            this.splitContainer2.SplitterWidth = 6;
+            this.splitContainer2.Size = new System.Drawing.Size(402, 275);
+            this.splitContainer2.SplitterDistance = 350;
             this.splitContainer2.TabIndex = 0;
             // 
             // splitContainer3
             // 
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer3.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer3.Margin = new System.Windows.Forms.Padding(4);
-            this.splitContainer3.MinimumSize = new System.Drawing.Size(72, 428);
+            this.splitContainer3.MinimumSize = new System.Drawing.Size(48, 285);
             this.splitContainer3.Name = "splitContainer3";
             this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -229,9 +225,8 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.CharacterDownButton);
-            this.splitContainer3.Size = new System.Drawing.Size(72, 428);
-            this.splitContainer3.SplitterDistance = 211;
-            this.splitContainer3.SplitterWidth = 6;
+            this.splitContainer3.Size = new System.Drawing.Size(48, 285);
+            this.splitContainer3.SplitterDistance = 140;
             this.splitContainer3.TabIndex = 8;
             // 
             // saveFileDialog1
@@ -248,14 +243,15 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(603, 530);
+            this.ClientSize = new System.Drawing.Size(402, 353);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "DungeonManager";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

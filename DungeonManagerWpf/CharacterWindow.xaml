@@ -1,0 +1,224 @@
+﻿<Window x:Class="DungeonManagerWpf.CharacterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:DungeonManagerWpf"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        Title="Character" Height="716" Width="838" AllowsTransparency="True" WindowStyle="None" Loaded="Window_Loaded" Closing="Window_Closing" ResizeMode="CanResizeWithGrip" SizeChanged="Window_SizeChanged">
+    <Window.Resources>
+        <ObjectDataProvider x:Key="dataFromRace" MethodName="GetValues"
+                            ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="local:CharacterRace"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        <ObjectDataProvider x:Key="dataFromAlignment" MethodName="GetValues"
+                            ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="local:CharacterAlignment"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        <ObjectDataProvider x:Key="dataFromClasses" MethodName="GetValues"
+                            ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="local:CharacterClass"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>
+    <Border BorderBrush="#4397cd" BorderThickness="2" x:Name="MainWindowBorder">
+        <DockPanel>
+            <Border Background="#303030" DockPanel.Dock="Top" Height="25" x:Name="titlebar" MouseLeftButtonDown="titlebar_MouseLeftButtonDown" VerticalAlignment="Top">
+                <Grid>
+                    <TextBlock Text="{Binding Title, FallbackValue=Title, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" 
+						Margin="10,0,0,0"
+						VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White"/>
+                    <StackPanel x:Name="HomeButtonsPanel" Height="25"  Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
+                        <Button Margin="0,0,0,0" Click="MinimizeButton_Click" Content="🗕" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="14" FontWeight="Bold" Height="25" Width="25" Background="#303030" Foreground="White" BorderThickness="0"/>
+                        <Button Margin="0,0,0,0" Content="🗖" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Height="25" Width="25" Background="#303030" Foreground="White" Click="Button_Click" BorderThickness="0"/>
+                        <Button Margin="0,0,0,0" Click="ExitButton_Click" Content="✖" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Height="25" Width="25" Background="#303030" Foreground="White" BorderThickness="0"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <DockPanel LastChildFill="True">
+                <Viewbox>
+                    <TabControl Width="840" Height="690">
+                        <TabItem Header="Base Info">
+                            <Grid Background="#FFE5E5E5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="14.5"/>
+                                    <ColumnDefinition Width="275.5"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.ColumnSpan="2">
+                                    <Grid Margin="5">
+                                        <Label HorizontalAlignment="Left" FontSize="14">Name</Label>
+                                        <TextBox Width="170" HorizontalAlignment="Right" Name="NameTextBox" TextChanged="NameTextBox_TextChanged"/>
+                                    </Grid>
+                                    <Grid Margin="5">
+                                        <Label HorizontalAlignment="Left" FontSize="14">Background</Label>
+                                        <TextBox Width="170" HorizontalAlignment="Right" Name="BackgroundTextBox" TextChanged="BackgroundTextBox_TextChanged"/>
+                                    </Grid>
+                                    <Grid Margin="5">
+                                        <Label HorizontalAlignment="Left" FontSize="14">Alignment</Label>
+                                        <ComboBox Width="170" HorizontalAlignment="Right" Name="AlignmentComboBox" ItemsSource="{Binding Source={StaticResource dataFromAlignment}}" SelectionChanged="AlignmentComboBox_SelectionChanged"/>
+                                    </Grid>
+
+                                    <Grid Margin="5">
+                                        <Label HorizontalAlignment="Left" FontSize="14">Race</Label>
+                                        <ComboBox Width="170" HorizontalAlignment="Right" Name="RaceComboBox" ItemsSource="{Binding Source={StaticResource dataFromRace}}" SelectionChanged="RaceComboBox_SelectionChanged"/>
+                                    </Grid>
+                                    <GroupBox Width="280" Height="264" Margin="0">
+                                        <GroupBox.Header>
+                                            <Label FontSize="16" FontWeight="Bold">Attributes</Label>
+                                        </GroupBox.Header>
+                                        <StackPanel>
+                                            <local:AttributeControl AttributeName="Strength" x:Name="StrengthAttribute" OnValueChangedEvent="StrengthAttribute_OnValueChangedEvent"/>
+                                            <local:AttributeControl AttributeName="Dexterity" x:Name="DexterityAttribute" OnValueChangedEvent="DexterityAttribute_OnValueChangedEvent"/>
+                                            <local:AttributeControl AttributeName="Constitution" x:Name="ConstitutionAttribute" OnValueChangedEvent="ConstitutionAttribute_OnValueChangedEvent"/>
+                                            <local:AttributeControl AttributeName="Intelligence" x:Name="IntelligenceAttribute" OnValueChangedEvent="IntelligenceAttribute_OnValueChangedEvent"/>
+                                            <local:AttributeControl AttributeName="Wisdom" x:Name="WisdomAttribute" OnValueChangedEvent="WisdomAttribute_OnValueChangedEvent"/>
+                                            <local:AttributeControl AttributeName="Charisma" x:Name="CharismaAttribute" OnValueChangedEvent="CharismaAttribute_OnValueChangedEvent"/>
+                                        </StackPanel>
+                                    </GroupBox>
+
+                                    <Grid Margin="10,0,10,10">
+                                        <Label HorizontalAlignment="Left" FontSize="14" >Armor Class</Label>
+                                        <local:NumericUpDown MinValue="0" HorizontalAlignment="Right" x:Name="ArmorClassNumeric" OnValueChangedEvent="ArmorClassNumeric_OnValueChangedEvent"/>
+                                    </Grid>
+                                    <Grid Margin="10,0,10,10">
+                                        <Label HorizontalAlignment="Left" FontSize="14" >Max Hit Points</Label>
+                                        <TextBox Width="70" HorizontalAlignment="Right" Name="HitPointsTextBox"/>
+                                    </Grid>
+                                    <Grid Margin="10,0,10,10">
+                                        <Label HorizontalAlignment="Left" FontSize="14" >Initiative</Label>
+                                        <local:NumericUpDown MinValue="0" HorizontalAlignment="Right" x:Name="InitiativeNumeric" OnValueChangedEvent="InitiativeNumeric_OnValueChangedEvent"/>
+                                    </Grid>
+                                    <Grid Margin="10,0,10,10">
+                                        <Label HorizontalAlignment="Left" FontSize="14" >Speed</Label>
+                                        <TextBox Width="70" HorizontalAlignment="Right" Name="SpeedTextBox" TextChanged="SpeedTextBox_TextChanged" PreviewTextInput="SpeedTextBox_PreviewTextInput"/>
+                                    </Grid>
+                                    <Grid Margin="10,0,10,10">
+                                        <Label HorizontalAlignment="Left" FontSize="14" >Spell Save DC</Label>
+                                        <Label HorizontalAlignment="Right" Name="SpellSaveLabel"/>
+                                    </Grid>
+                                    <Grid Margin="10,0,10,10">
+                                        <Label HorizontalAlignment="Left" FontSize="14" >Spell Atack Mod</Label>
+                                        <Label HorizontalAlignment="Right" Name="SpellAttackLabel" />
+                                    </Grid>
+
+                                </StackPanel>
+                                <StackPanel Grid.Column="2">
+                                    <GroupBox Width="270">
+                                        <GroupBox.Header>
+                                            <Label FontSize="16" FontWeight="Bold">Levels</Label>
+                                        </GroupBox.Header>
+                                        <StackPanel>
+                                            <Grid Margin="5">
+                                                <ComboBox Name="NewLevelCombobox" Width="120" HorizontalAlignment="Left" ItemsSource="{Binding Source={StaticResource dataFromClasses}}"></ComboBox>
+                                                <local:NumericUpDown x:Name="NewLevelNumeric" Width="120" HorizontalAlignment="Right" Value="1"/>
+                                            </Grid>
+                                            <Button Height="30" Content="Add" Margin="4" Name="LevelAddButton" Click="LevelAddButton_Click"></Button>
+                                            <ListBox Height="100" Margin="5" Name="LevelsListBox"></ListBox>
+                                            <Grid Margin="3">
+                                                <Button Content="Remove" Width="120" Height="30" HorizontalAlignment="Left" Name="LevelRemoveButton" Click="LevelRemoveButton_Click"/>
+                                                <Button Content="Level Up" Width="120" Height="30" HorizontalAlignment="Right" Name="LevelUpButton" Click="LevelUpButton_Click"/>
+                                            </Grid>
+                                        </StackPanel>
+                                    </GroupBox>
+                                    <Grid Margin="20,15,20,0">
+                                        <Label HorizontalAlignment="Left" Width="200" FontSize="14">Proficency Bonus</Label>
+                                        <Label HorizontalAlignment="Right" x:Name="ProficiencyNumeric" Content="2"/>
+                                    </Grid>
+                                    <GroupBox Height="235" Margin="2">
+                                        <GroupBox.Header>
+                                            <Label FontSize="16" FontWeight="Bold">Saving Throws</Label>
+                                        </GroupBox.Header>
+                                        <StackPanel>
+                                            <local:SkillControl SkillName="Strength" HideExpertise="True" x:Name="StrengthSavingThrow" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=StrengthAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="StrengthSavingThrow_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Dexterity" HideExpertise="True" x:Name="DexteritySavingThrow" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=DexterityAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="DexteritySavingThrow_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Consitution" HideExpertise="True" x:Name="ConstitutionSavingThrow" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=ConstitutionAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="ConstitutionSavingThrow_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Intelligence" HideExpertise="True" x:Name="IntelligenceSavingThrow" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=IntelligenceAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="IntelligenceSavingThrow_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Wisdom" HideExpertise="True" x:Name="WisdomSavingThrow" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=WisdomAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="WisdomSavingThrow_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Charisma" HideExpertise="True" x:Name="CharismaSavingThrow" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=CharismaAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="CharismaSavingThrow_OnProficiencyChangedEvent"/>
+                                        </StackPanel>
+                                    </GroupBox>
+
+                                </StackPanel>
+                                <StackPanel Grid.Column="3">
+                                    <GroupBox Height="616" VerticalAlignment="Top" Margin="2">
+                                        <GroupBox.Header>
+                                            <Label FontSize="16" FontWeight="Bold">Skills</Label>
+                                        </GroupBox.Header>
+                                        <StackPanel>
+                                            <local:SkillControl SkillName="Acrobatics" x:Name="AcrobaticsSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=DexterityAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="AcrobaticsSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Animal Handling" x:Name="AnimalHandlingSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=WisdomAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="AnimalHandlingSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Arcana" x:Name="ArcanaSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=IntelligenceAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="ArcanaSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Athletics" x:Name="AthleticsSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=StrengthAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="AthleticsSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Deception" x:Name="DeceptionSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=CharismaAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="DeceptionSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="History" x:Name="HistorySkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=IntelligenceAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="HistorySkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Insight" x:Name="InsightSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=WisdomAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="InsightSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Intimidation" x:Name="IntimidationSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=CharismaAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="IntimidationSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Investigation" x:Name="InvestigationSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=IntelligenceAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="InvestigationSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Medicine" x:Name="MedicineSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=WisdomAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="MedicineSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Nature" x:Name="NatureSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=IntelligenceAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="NatureSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Perception" x:Name="PerceptionSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=WisdomAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="PerceptionSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Performance" x:Name="PerformanceSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=CharismaAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="PerformanceSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Persuasion" x:Name="PersuasionSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=CharismaAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="PersuasionSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Religion" x:Name="ReligionSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=IntelligenceAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="ReligionSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Sleight of Hand" x:Name="SleightOfHandSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=DexterityAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="SleightOfHandSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Stealth" x:Name="StealthSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=DexterityAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="StealthSkill_OnProficiencyChangedEvent"/>
+                                            <local:SkillControl SkillName="Survival" x:Name="SurvivalSkill" ProficiencyBonus="{Binding ElementName=ProficiencyNumeric, Path=Content}" BaseAttribute="{Binding ElementName=WisdomAttribute, Path=AttributeValue}" OnProficiencyChangedEvent="SurvivalSkill_OnProficiencyChangedEvent"/>
+                                        </StackPanel>
+                                    </GroupBox>
+                                    <Grid Margin="20,0,20,10">
+                                        <Label HorizontalAlignment="Left" FontSize="16" FontWeight="DemiBold" >Passive Perception</Label>
+                                        <Label HorizontalAlignment="Right" FontWeight="DemiBold" Name="PassivePerceptionLabel" Content="10" FontSize="16"/>
+                                    </Grid>
+                                </StackPanel>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Features/Background">
+                            <Grid Background="#FFE5E5E5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0">
+
+                                    <GroupBox>
+                                        <GroupBox.Header>
+                                            <Label FontSize="16" FontWeight="Bold">Features and Traits</Label>
+                                        </GroupBox.Header>
+                                        <StackPanel>
+                                            <TextBox Height="30" Margin="5" Name="NewFeatureTextBox"/>
+                                            <Button Height="30" Content="Add" Margin="4" Name="AddFeatureButton" Click="AddFeatureButton_Click"></Button>
+                                            <ListBox Height="300" Margin="5" Name="FeaturesListBox"></ListBox>
+                                            <Button Content="Remove" Height="30" Margin="4" Name="RemoveFeaturebutton" Click="RemoveFeaturebutton_Click" />
+                                        </StackPanel>
+                                    </GroupBox>
+                                </StackPanel>
+                                <StackPanel Grid.Column="1">
+                                    <GroupBox>
+                                        <GroupBox.Header>
+                                            <Label FontSize="16" FontWeight="Bold">Description</Label>
+                                        </GroupBox.Header>
+                                        <StackPanel>
+                                            <Label>Personality Traits</Label>
+                                            <TextBox AcceptsReturn="True" TextWrapping="Wrap" Height="125" Name="PersonalityTextBox" TextChanged="PersonalityTextBox_TextChanged" ></TextBox>
+                                            <Label>Ideals</Label>
+                                            <TextBox AcceptsReturn="True" TextWrapping="Wrap" Height="125" Name="IdealsTextBox" TextChanged="IdealsTextBox_TextChanged"></TextBox>
+                                            <Label>Bonds</Label>
+                                            <TextBox AcceptsReturn="True" TextWrapping="Wrap" Height="125" Name="BondsTextBox" TextChanged="BondsTextBox_TextChanged"></TextBox>
+                                            <Label>Flaws</Label>
+                                            <TextBox AcceptsReturn="True" TextWrapping="Wrap" Height="125" Name="FlawsTextBox" TextChanged="FlawsTextBox_TextChanged"></TextBox>
+                                        </StackPanel>
+                                    </GroupBox>
+                                </StackPanel>
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+                </Viewbox>
+            </DockPanel>
+        </DockPanel>
+    </Border>
+</Window>
